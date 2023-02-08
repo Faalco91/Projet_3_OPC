@@ -146,14 +146,17 @@ padding: 10px 0px 30px 0px;
 }
 div > button {
 	display: flex;
-    width: 60px;
+    width: auto;
     height: 20px;
     margin: 0 5px;
+    padding: 14px 13px 12px 13px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 15px;
     border-width: 0.1em;
     border-color: #1D6154;
-
+    color: #1D6154;
+	font-family: 'Syne';
+    align-items: center;
 }
 #contact {
 	width: 50%;
