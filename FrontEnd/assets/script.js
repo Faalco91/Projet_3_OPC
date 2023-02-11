@@ -7,7 +7,6 @@ const filtres = document.querySelector(".filtres");
 let imagesData = [];
 
 
-
 //Fonction appelé dans createFilter qui s'occupe donc du filtrage des images par le .name
 function showImg(b, imagesData){
 
@@ -97,7 +96,6 @@ function createImage(a){
         figcaption.appendChild(text);
         imgArts.crossOrigin = "anonymous";
         imgArts.src = a[i].imageUrl;
-        
     }
 
     return true;
@@ -119,9 +117,13 @@ fetch('http://localhost:5678/api/works')
 
 ///Commande pour appeler l'API/categories
 fetch('http://localhost:5678/api/categories')
-        .then(response => response.json())
+        .then(res => res.json())
         //La variable filter va parcourir la fonction createFilter et permettre d'y afficher le .name de chaque catégories d'images à partir de l'API
         .then(filter => createFilter(filter))
 
+
+/*fetch('http://localhost:5678/api/users/login')
+        .then(res => res.json())
+        .then()*/
 
     

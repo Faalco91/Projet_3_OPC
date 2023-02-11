@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Sophie Bluel - Architecte d'intérieur</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+<header>
+	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
+	<nav>
+		<ul>
+			<li>projets</li>
+			<li>contact</li>
+			<li>login</li>
+			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+		</ul>
+	</nav>
+</header>
+
+<main id="Login-section">
+	<section id="Login">
+		<h2>Log In</h2>
+        <form methode="POST" id="login-form" onsubmit="userConnection(event);">
+            <div class="form-login"> 
+
+                <label for ="email" class="label"> E-mail </label>
+                <input type="texte" class="champ-texte email" id="email" name="email"/>
+                <br/>
+                <label for="mdp" class="label"> Mot de passe </label>
+                <input type="texte" class="champ-texte passeword" id="mdp" name="mdp">
+                <input type="submit" value="Se connecter" id="submit" name="submit">
+                <a id="mdp-oublie" href="">Mot de passe oublié</a>
+            </div>
+        </form>
+	</section>
+</main>
+
+<footer id="footer-accueil">
+	<nav>
+		<ul>
+			<li>Mentions Légales</li>
+		</ul>
+	</nav>
+</footer>
+<script src="./assets/connexion-script.js"></script>
+</body>
+</html>
