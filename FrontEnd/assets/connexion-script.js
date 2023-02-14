@@ -67,7 +67,7 @@
             "Content-Type": "application/json",
             "Authorization": `Bearer ${token}`
         }
-         window.location.href="index.html";
+         window.location.href="administrateur_page.html";
 
     })
 } 
