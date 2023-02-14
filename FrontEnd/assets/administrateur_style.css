@@ -105,6 +105,31 @@ main{
     background-color: black;
     color: white;
 }
+#modif-bar-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.modif-bar{
+    margin: 0px 10px;
+}
+#icon-edit{
+    color: white;
+    background-color: black;
+    font-size: 18px;
+}
+#icon-edit-2{
+        color: black;
+        font-size: 17px;
+}
+#changements{
+    padding: 12px 20px;
+    border-color: white;
+    border-radius: 60px;
+    background-color: white;
+    color: black;
+}
 #nav-bar{
     display: flex;
     flex-direction: row;
@@ -114,7 +139,36 @@ main{
 /*#insta-logo{
     size: 5px;
 }*/
+#modif-portrait{
+    display: flex;
+    width: 80%;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 10px;
+    margin: auto;
+}
+.span-modif{
+align-self: flex-end;
+margin-left: 5px;
+}
+#mes-projets{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding-top: 60px;
+}
+#projets-modif{
+	align-items: center;
+	margin-top: 10px;
+	margin-left: 30px;
+	margin-bottom: auto;
 
+}
+
+.filtres>*{
+	display: none;
+}
 #login-section{
 	height: 100%;
 }
@@ -226,7 +280,7 @@ li:hover {
 display: flex;
 align-items: center;
 justify-content: center;
-padding: 10px 0px 30px 0px;
+padding: 10px 0px 65px 0px;
 
 }
 .btn-filter:active {

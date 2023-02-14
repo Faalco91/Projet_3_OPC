@@ -8,22 +8,24 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
+    <script src="https://kit.fontawesome.com/f48346f4af.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="./assets/administrateur_style.css">
 </head>
 <body>
 <header>
     <div id="modif-bar">
-        <i class="fal fa-edit"></i>
-        <p class="modif-bar">Mode édition</p>
-        <p class="modif-bar">Publier les changements</p>
+        <div id="modif-bar-2">
+        <i id="icon-edit" class="fa fa-regular fa-pen-to-square"></i>         <p class="modif-bar">Mode édition</p>
+        <p class="modif-bar" id="changements">Publier les changements</p>
+        </div>
     </div>
 	<nav id="nav-bar">
         <h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
 
 		<ul>
-			<li>projets</li>
-			<li>contact</li>
-			<li><a href="connexion_page.html" class="menu">Logout</a></li>
+			<li><a href="#portfolio">projets</a></li>
+			<li><a href="#contact">contact</a></li>
+			<li><a href="connexion_page.html" class="menu">logout</a></li>
 			<li><img id ="insta-logo" src="./assets/icons/instagram.png" alt="Instagram" height="20px" width="20px"></li>
 		</ul>
 	</nav>
@@ -31,7 +33,12 @@
 <main>
 	<section id="introduction">
 		<figure>
-			<img src="./assets/images/sophie-bluel.png" alt="">
+			<img src="./assets/images/sophie-bluel.png" alt="modifier">
+            <div id="modif-portrait">
+                <i id="icon-edit-2" class="fa fa-regular fa-pen-to-square"></i>
+                <span class="span-modif">modifier</span>
+            </div>
+            
 		</figure>
 		<article>
 			<h2>Designer d'espace</h2>
@@ -41,7 +48,13 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2>Mes Projets</h2>
+		<div id="mes-projets">
+			<h2>Mes Projets</h2>
+			<div id="projets-modif">
+			<i id="icon-edit-3" class="fa fa-regular fa-pen-to-square"></i> 
+			<span class="span-modif ">modifier</span>
+			</div>
+		</div>
 		<div class="filtres">
 			
 		</div>
