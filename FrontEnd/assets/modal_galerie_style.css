@@ -84,9 +84,21 @@ img{
 .bordure{
     border-bottom: 1px solid black;
     width: 100%;
-    margin-top: 50px;
+    margin-top: 45px;
 }
 #addphoto{
     display: flex;
-    justify-content: center;
+	justify-content: center;
+	color: white;
+	background-color: #1D6154;
+	margin-top: 8px;
+	width: 237px;
+	height: 36px;
+	border: 0px;
+    border-radius: 60px;
+}
+#supp_galerie{
+    size: 14px;
+    color:#D65353;
+    margin-top: 25px;
 }

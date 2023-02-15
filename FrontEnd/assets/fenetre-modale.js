@@ -34,6 +34,9 @@ function createImage(a){
     const addphoto = document.querySelector("#addphoto");
     modal_galerie.appendChild(addphoto);
 
+    const supp = document.querySelector("#supp_galerie");
+    modal_galerie.appendChild(supp);
+
     return true;
 }
 
