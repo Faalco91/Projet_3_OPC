@@ -2,6 +2,8 @@
 const gallery = document.querySelector(".gallery");
 //const ayant ciblé la div class = "filtres".
 const filtres = document.querySelector(".filtres");
+//
+const modal_galerie = document.querySelector(".modal-galerie");
 // variable qui permet de créer un tableau dans lequel on va par la suite affecter les images via l'API.
 let imagesData = [];
 
@@ -29,7 +31,10 @@ function createImage(a){
     bordure.className = "bordure";
     gallery.appendChild(bordure);
 
-   return true;
+    const addphoto = document.querySelector("#addphoto");
+    modal_galerie.appendChild(addphoto);
+
+    return true;
 }
 
 //Commande pour appeler l'API/works
