@@ -49,15 +49,23 @@
 	</section>
 	<section id="portfolio">
 		<div id="mes-projets">
-			<h2>Mes Projets</h2>
 			<div id="projets-modif">
+			<h2>Mes Projets</h2>
 			<i id="icon-edit-3" class="icon-edit fa fa-regular fa-pen-to-square"></i> 
-			<a href="#modal-object" id="a-modif ">modifier</a>
+			<a href="#modal1" id="amodif ">modifier</a>
 			<!-- Importe le fichier HTML de la modal -->
 			</div>
+			<aside id="modal-content" class="modal-content" aria-hidden="true" role="dialog" aria-modal="" aria-labelledby="modaltitle">
+				<div class="modal-galerie">
+					<span class="close">&times;</span>
+					<h1 id="modaltitle">Galerie photo</h1>
+					<div class="gallery2">
+					</div>
+					<input type="submit" value="Ajouter une photo" id="addphoto">
+					<a href=""><p id="supp_galerie">Supprimer la galerie</p></a>
+				</div> 
 		</div>
-					<object id="modal-object" data="fenetre-modale.html"></object>
-
+		<!-- <object id="modal-object" data="fenetre-modale.html"></object>-->
 		<div class="filtres">
 			
 		</div>
