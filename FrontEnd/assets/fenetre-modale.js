@@ -3,9 +3,27 @@ const gallery = document.querySelector(".gallery");
 //const ayant ciblé la div class = "filtres".
 const filtres = document.querySelector(".filtres");
 //
-const modal_galerie = document.querySelector(".modal-galerie");
+var modal = document.querySelector("modal-content");
+//
+var btn = document.querySelector("a-modal");
+//
+var exit = document.querySelector("close");
 // variable qui permet de créer un tableau dans lequel on va par la suite affecter les images via l'API.
 let imagesData = [];
+
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+exit.onclick = function(){
+    modal.style.display = "none";
+}
+window.onclick = function(event){
+    if(event.target == modal){
+        modal.style.display = "none";
+    }
+}
+
+
 
 //Fonction qui va nous permettre de générer les images dans la page avec leurs texte
 function createImage(a){
@@ -39,6 +57,7 @@ function createImage(a){
 
     return true;
 }
+
 
 //Commande pour appeler l'API/works
 fetch('http://localhost:5678/api/works')

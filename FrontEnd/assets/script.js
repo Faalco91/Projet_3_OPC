@@ -126,4 +126,11 @@ fetch('http://localhost:5678/api/categories')
         .then(res => res.json())
         .then()*/
 
-    
+ 
+
+var button = document.getElementById("a-modif");
+
+button.addEventListener('click', event => {
+    var modal = document.getElementById("modal-object");
+    modal.style.display = "block";
+})

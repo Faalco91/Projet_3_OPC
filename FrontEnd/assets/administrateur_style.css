@@ -114,15 +114,21 @@ main{
 .modif-bar{
     margin: 0px 10px;
 }
-#icon-edit{
+.icon-edit{
+	font-size: 16px;
+}
+#icon-edit-1{
     color: white;
     background-color: black;
-    font-size: 18px;
 }
 #icon-edit-2{
         color: black;
-        font-size: 17px;
+		margin-right: 5px;
 }
+#icon-edit-3{
+	margin: 0px;
+}
+
 #changements{
     padding: 12px 20px;
     border-color: white;
@@ -350,3 +356,8 @@ footer nav ul {
 	margin: 2em
 }
 
+
+
+#modal-object{
+display: none;
+}
