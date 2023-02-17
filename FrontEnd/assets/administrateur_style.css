@@ -374,7 +374,7 @@ footer nav ul {
 	overflow: auto; /* Activez le défilement si la hauteur de la modal est supérieure à l'écran */
 	background-color: rgba(0, 0, 0, 0.4);
 }
-.modal-galerie{
+#modal_galerie{
     display: flex;
 	width: 630px;
 	height: 730px;
@@ -414,6 +414,13 @@ footer nav ul {
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 35px 12%;
+}
+.imgs2{
+	display: flex;
+	flex-direction: column;
+	width: 78px;	
+	height: 140px;
+	margin: 2px;
 }
 
 .bordure{

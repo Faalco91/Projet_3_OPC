@@ -15,6 +15,7 @@ function createImage2(a){
        //Commandes pour créer les élements figure>img,figcaption
        const figure = document.createElement("figure");
        figure.className = a[i].category.name;
+       figure.classList.add("imgs2");
        const imgArts = document.createElement("img");
        const figcaption = document.createElement("figcaption");
        //Commande pour ajouter le texte sous les images
@@ -48,9 +49,9 @@ const modal = document.getElementById("modal");
 //
 const exit = document.getElementsByClassName("close")[0];
 
-/*btn.onclick = function disappearsmodal() {
+btn.onclick = function disappearsmodal() {
     modal.style.display = "block";
-}*/
+}
 exit.onclick = function exitmodal(){
     modal.style.display = "none";
 }

@@ -27,6 +27,7 @@ body {
 
 }
 .modal-content{
+	display: none;
     display: flex;
 	width: 100%;
 	height: 100%;
@@ -49,6 +50,11 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 35px 12%;
+}
+.gallery2 > figure{
+	display: flex;
+	width: 78px;
+	height: 140px;
 }
 h1{
 	display: flex;
