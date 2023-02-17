@@ -2,6 +2,8 @@
 const gallery2 = document.querySelector(".gallery2");
 //
 const modal_galerie = document.getElementById("modal_galerie");
+//
+const bottom = document.getElementById("bottom_modal");
 // variable qui permet de créer un tableau dans lequel on va par la suite affecter les images via l'API.
 let imagesData2 = [];
 
@@ -34,10 +36,10 @@ function createImage2(a){
     gallery2.appendChild(bordure);
 
     const addphoto = document.querySelector("#addphoto");
-    modal_galerie.appendChild(addphoto);
+    bottom.appendChild(addphoto);
 
     const supp = document.querySelector("#supp_galerie");
-    modal_galerie.appendChild(supp);
+    bottom.appendChild(supp);
 
     return true;
 }

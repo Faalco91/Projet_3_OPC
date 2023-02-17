@@ -393,6 +393,7 @@ footer nav ul {
 	float: right;
 	font-size: 28px;
 	font-weight: bold;
+	margin-top: 30px;
   }
   
   .close:hover,
@@ -413,21 +414,26 @@ footer nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 35px 12%;
+    margin: 45px 14%;
 }
 .imgs2{
 	display: flex;
 	flex-direction: column;
 	width: 78px;	
-	height: 140px;
+	height: 130px;
 	margin: 2px;
 }
-
+#bottom_modal{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 40px;
+}
 .bordure{
     border-bottom: 1px solid black;
-    width: 90%;
-    margin-top: 50px;
-    margin-top: 45px;
+    width: 100%;
+    margin-top: 25px;
 }
 #addphoto{
     display: flex;
@@ -435,7 +441,7 @@ footer nav ul {
 	justify-content: center;
 	color: white;
 	background-color: #1D6154;
-	margin-top: 8px;
+	margin: 8px;
 	width: 237px;
 	height: 36px;
 	border: 0px;
@@ -444,5 +450,6 @@ footer nav ul {
 #supp_galerie{
     size: 14px;
     color:#D65353;
-    margin-top: 25px;
+    margin-top: 15px;
+
 }
