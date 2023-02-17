@@ -44,6 +44,24 @@ function createImage2(a){
     return true;
 }
 
+//Fonction qui va permettre de supprimer les images que l'on choisiras de supprimer via le bouton delete
+function deleteImg(){
+    fetch("http://localhost:5678/api/works/1" + imgasupp.id, {
+        method: "DELETE",
+    })
+    .then(function(response){
+        if(response.ok){
+            imgasupp.remove();
+        } else {
+            throw new Error("Erreur de suppression");
+        }
+    })
+    .catch(function(error){
+        console.log(error);
+    });
+}
+
+
 //
 const btn = document.getElementById("amodal");
 //
