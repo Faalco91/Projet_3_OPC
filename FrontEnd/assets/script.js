@@ -6,7 +6,6 @@ const filtres = document.querySelector(".filtres");
 // variable qui permet de créer un tableau dans lequel on va par la suite affecter les images via l'API.
 let imagesData = [];
 
-
 //Fonction appelé dans createFilter qui s'occupe donc du filtrage des images par le .name
 function showImg(b, imagesData){
 
@@ -22,7 +21,7 @@ function showImg(b, imagesData){
     ex: button="Objets" & .name = "Objets" */
     let result = imagesData.filter(image => image.category.name == b);
 
-
+    
     /* Condition spécifique pour le fonctionnement du bouton "Tous" du filtre, qui va permettre donc d'afficher toute les images quand 
     la variable b passée en argument de la fonction aura pour valeur "tous. */
     if (b == 'tous'){
@@ -102,7 +101,6 @@ function createImage(a){
 }
 
 
-
 //Commande pour appeler l'API/works
 fetch('http://localhost:5678/api/works')
 	.then(res => res.json())
@@ -126,11 +124,3 @@ fetch('http://localhost:5678/api/categories')
         .then(res => res.json())
         .then()*/
 
- 
-
-var button = document.getElementById("a-modif");
-
-button.addEventListener('click', event => {
-    var modal = document.getElementById("modal-object");
-    modal.style.display = "block";
-})

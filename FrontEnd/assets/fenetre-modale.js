@@ -1,32 +1,13 @@
-//Commande pour ciblé la div class="gallery".
-const gallery = document.querySelector(".gallery");
-//const ayant ciblé la div class = "filtres".
-const filtres = document.querySelector(".filtres");
-//
-var modal = document.querySelector("modal-content");
-//
-var btn = document.querySelector("a-modal");
-//
-var exit = document.querySelector("close");
+//Commande pour ciblé la div class="gallery2".
+const gallery2 = document.querySelector(".gallery2");
 // variable qui permet de créer un tableau dans lequel on va par la suite affecter les images via l'API.
-let imagesData = [];
+let imagesData2 = [];
 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-exit.onclick = function(){
-    modal.style.display = "none";
-}
-window.onclick = function(event){
-    if(event.target == modal){
-        modal.style.display = "none";
-    }
-}
 
 
 
 //Fonction qui va nous permettre de générer les images dans la page avec leurs texte
-function createImage(a){
+function createImage2(a){
  
     for(let i = 0; i < a.length; i++){
        //Commandes pour créer les élements figure>img,figcaption
@@ -38,7 +19,7 @@ function createImage(a){
        const text = document.createTextNode(a[i].edit);
     
        //Commandes pour placer les éléments aux bons endroits dans le HTML
-       gallery.appendChild(figure);
+       gallery2.appendChild(figure);
        figure.appendChild(imgArts);
        figure.appendChild(figcaption);
        figcaption.appendChild(text);
@@ -47,7 +28,7 @@ function createImage(a){
    }
     const bordure = document.createElement("div");
     bordure.className = "bordure";
-    gallery.appendChild(bordure);
+    gallery2.appendChild(bordure);
 
     const addphoto = document.querySelector("#addphoto");
     modal_galerie.appendChild(addphoto);
@@ -58,6 +39,24 @@ function createImage(a){
     return true;
 }
 
+//
+const btn = document.getElementById("amodal");
+//
+const modal = document.getElementById("modal");
+//
+const exit = document.getElementsByClassName("close")[0];
+
+/*btn.onclick = function disappearsmodal() {
+    modal.style.display = "block";
+}*/
+exit.onclick = function exitmodal(){
+    modal.style.display = "none";
+}
+window.onclick = function exitatanywhere(event){
+    if(event.target == modal){
+        modal.style.display = "none";
+    }
+}
 
 //Commande pour appeler l'API/works
 fetch('http://localhost:5678/api/works')
@@ -65,7 +64,7 @@ fetch('http://localhost:5678/api/works')
     /* On appel dans l'API/works une variable qui va parcourir les images dans la "base de données", qui va être elle même affecter à imagesData
      qui comprendra donc toute les images dans un tableau afin de pouvoir le réutiliser de manière indépendante */
     .then(el => {
-        imagesData = el;
+        imagesData2 = el;
         return el;
     })
-    .then(data => createImage(data)) 
+    .then(data => createImage2(data)) 
