@@ -125,9 +125,7 @@ main{
         color: black;
 		margin-right: 5px;
 }
-#icon-edit-3{
-	margin-bottom: 25px;
-}
+
 
 #changements{
     padding: 12px 20px;
@@ -168,13 +166,23 @@ margin-bottom: 25px;
 #projets-modif{
 	display: flex;
 	flex-direction: row;
-	align-items: center;
+	justify-content: center;
 	margin-top: 10px;
 	margin-left: 30px;
 	margin-bottom: auto;
-
+	width: 100%;
 }
-
+#mesprojets{
+	margin: 0px;
+}
+#modif-icon-liens{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	height: 35px;
+	width: 90px;
+	margin-left: 25px;
+}
 .filtres>*{
 	display: none;
 }
@@ -271,7 +279,6 @@ li:hover {
 }
 #portfolio h2 {
 	text-align: center;
-	margin-bottom: 1em;
 }
 .gallery {
 	width: 100%;
@@ -441,7 +448,7 @@ footer nav ul {
 	justify-content: center;
 	color: white;
 	background-color: #1D6154;
-	margin: 8px;
+	margin: 0px 0px 5px 0px;
 	width: 237px;
 	height: 36px;
 	border: 0px;

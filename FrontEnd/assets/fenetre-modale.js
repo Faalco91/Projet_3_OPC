@@ -54,7 +54,9 @@ modal.focus();
 
 btn.onclick = function disappearsmodal() {
     modal.style.display = "block";
+    console.log(btn);
 }
+
 exit.onclick = function exitmodal(){
     modal.style.display = "none";
 }
