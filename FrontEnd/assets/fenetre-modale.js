@@ -48,6 +48,7 @@ const btn = document.getElementById("amodal");
 const modal = document.getElementById("modal");
 //
 const exit = document.getElementsByClassName("close")[0];
+modal.focus();
 
 btn.onclick = function disappearsmodal() {
     modal.style.display = "block";
