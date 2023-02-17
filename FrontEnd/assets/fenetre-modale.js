@@ -1,5 +1,7 @@
 //Commande pour ciblé la div class="gallery2".
 const gallery2 = document.querySelector(".gallery2");
+//
+const modal_galerie = document.getElementById("modal_galerie");
 // variable qui permet de créer un tableau dans lequel on va par la suite affecter les images via l'API.
 let imagesData2 = [];
 
