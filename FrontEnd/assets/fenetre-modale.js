@@ -6,6 +6,17 @@ const modal_galerie = document.getElementById("modal_galerie");
 const bottom = document.getElementById("bottom_modal");
 // variable qui permet de créer un tableau dans lequel on va par la suite affecter les images via l'API.
 let imagesData2 = [];
+//
+
+//
+const btn = document.getElementById("amodal");
+//
+const modal = document.getElementById("modal");
+//
+const exit = document.getElementsByClassName("close")[0];
+modal.focus();
+const images = document.querySelectorAll("images");
+
 
 
 
@@ -19,18 +30,44 @@ function createImage2(a){
        figure.className = a[i].category.name;
        figure.classList.add("imgs2");
        const imgArts = document.createElement("img");
+       imgArts.classList.add("images");
        const figcaption = document.createElement("figcaption");
        //Commande pour ajouter le texte sous les images
        const text = document.createTextNode(a[i].edit);
+       const buttonSupp = document.createElement("button")
+       buttonSupp.classList.add("trash-button");
+       const trash = document.createElement("i");
+       trash.classList.add("icon-edit-4", "fa-solid", "fa-trash-can");
+
+
+
+
     
        //Commandes pour placer les éléments aux bons endroits dans le HTML
        gallery2.appendChild(figure);
        figure.appendChild(imgArts);
        figure.appendChild(figcaption);
+       figure.appendChild(buttonSupp);
+       buttonSupp.appendChild(trash);
        figcaption.appendChild(text);
        imgArts.crossOrigin = "anonymous";
        imgArts.src = a[i].imageUrl;
+       buttonSupp.addEventListener("click", function() {
+        var imgasupp = this.previousElementSibling;
+        modal.removeChild(imgasupp);
+        
+    });
+
+
+       /*buttonSupp.addEventListener("click", function() {
+            var imgasupp = this.previousElementSibling;
+            modal.removeChild(imgasupp);
+        });
+        imgArts[i].parentElement.appendChild(buttonSupp);*/
+
+       
    }
+
     const bordure = document.createElement("div");
     bordure.className = "bordure";
     gallery2.appendChild(bordure);
@@ -40,9 +77,22 @@ function createImage2(a){
 
     const supp = document.querySelector("#supp_galerie");
     bottom.appendChild(supp);
-
+    
     return true;
 }
+
+/*for(let i = 0; i < images.length; i++){
+    const images = document.querySelectorAll("imgs2");
+
+    var buttonSupp = document.createElement("button")
+    buttonSupp.textContent = "Supprimer";
+    buttonSupp.addEventListener("click", function() {
+        var imgasupp = this.previousElementSibling;
+        modal.removeChild(imgasupp);
+    });
+    images[i].parentElement.appendChild(buttonSupp);
+
+}*/
 
 //Fonction qui va permettre de supprimer les images que l'on choisiras de supprimer via le bouton delete
 function deleteImg(){
@@ -61,14 +111,6 @@ function deleteImg(){
     });
 }
 
-
-//
-const btn = document.getElementById("amodal");
-//
-const modal = document.getElementById("modal");
-//
-const exit = document.getElementsByClassName("close")[0];
-modal.focus();
 
 btn.onclick = function disappearsmodal() {
     modal.style.display = "block";

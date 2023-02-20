@@ -125,6 +125,21 @@ main{
         color: black;
 		margin-right: 5px;
 }
+.trash-button{
+	position: absolute;
+	z-index: 2;
+	background-color: transparent;
+	border: 0px;
+	margin-left: 51px;
+	margin-top: 5px;
+}
+.icon-edit-4{
+	color: white;
+	font-size: 9px;
+	padding: 4px;
+	border-radius: 2px;
+	background-color: black;
+}
 
 
 #changements{

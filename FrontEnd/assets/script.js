@@ -6,6 +6,7 @@ const filtres = document.querySelector(".filtres");
 // variable qui permet de créer un tableau dans lequel on va par la suite affecter les images via l'API.
 let imagesData = [];
 
+
 //Fonction appelé dans createFilter qui s'occupe donc du filtrage des images par le .name
 function showImg(b, imagesData){
 
@@ -37,9 +38,9 @@ function showImg(b, imagesData){
  
 //Fonction qui va permettre de créer les filtres du sites.
 function createFilter(name){
+    const token =  localStorage.getItem("authToken");
 // erreur rencontré "impossible de lire propriété name sur élément undefined" donc condition de mise en marche de la fonction que si name !== undefined
-if(name !== undefined){
-
+if(!token){
     const tous = document.createElement("button");
     tous.innerHTML = 'Tous';
     tous.className = 'btn-filter';
@@ -70,8 +71,7 @@ if(name !== undefined){
     filtres.appendChild(objets);
     filtres.appendChild(appartements);
     filtres.appendChild(hotelresto);
-
-}    
+}
 }
 
 
