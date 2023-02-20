@@ -5,6 +5,41 @@ const gallery = document.querySelector(".gallery");
 const filtres = document.querySelector(".filtres");
 // variable qui permet de créer un tableau dans lequel on va par la suite affecter les images via l'API.
 let imagesData = [];
+//
+const adminBar1 = document.querySelector(".modif-bar-1");
+const adminBar2 = document.querySelector(".modif-bar-2")
+
+
+function adminBar(){
+
+const token =  localStorage.getItem("authToken");
+
+if(userIsLoggedIn()){
+if(token){
+
+const iconModif = document.createElement("i");
+iconModif.classList.add("icon-edit","fa","fa-regular","fa-pen-to-square");
+iconModif.setAttribute("id", "icon-edit-1");
+
+const pEdit = document.createElement("p");
+pEdit.classList.add("modif-bar");
+pEdit.textContent = "Mode édition";
+const pChang = document.createElement("p");
+pChang.classList.add("modif-bar");
+pChang.setAttribute("id", "changements");
+pChang.textContent = "Publier les changements";
+
+adminBar1.appendChild(adminBar2);
+adminBar2.appendChild(iconModif);
+adminBar2.appendChild(pEdit);
+adminBar2.appendChild(pChang);
+
+}
+}
+}
+
+
+
 
 
 //Fonction appelé dans createFilter qui s'occupe donc du filtrage des images par le .name
@@ -40,7 +75,7 @@ function showImg(b, imagesData){
 function createFilter(name){
     const token =  localStorage.getItem("authToken");
 // erreur rencontré "impossible de lire propriété name sur élément undefined" donc condition de mise en marche de la fonction que si name !== undefined
-if(!token){
+if(token){
     const tous = document.createElement("button");
     tous.innerHTML = 'Tous';
     tous.className = 'btn-filter';

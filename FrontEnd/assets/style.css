@@ -89,6 +89,12 @@ a{
 	text-decoration: none;
 	color: black;
 }
+header {
+	display: flex;
+	justify-content: space-between;
+	margin: 0px 0px 50px 0px;
+    flex-direction: column;
+}
 #login-section{
 	height: 100%;
 }
@@ -140,6 +146,49 @@ a{
 #mdp-oublie{
 	color: black;
 	padding-top: 30px;
+}
+
+.modif-bar-1{
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    height: 60px;
+    background-color: black;
+    color: white;
+}
+.modif-bar-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+	width: 100%;
+}
+.modif-bar{
+    margin: 0px 10px;
+}
+.icon-edit{
+	font-size: 16px;
+}
+#icon-edit-1{
+    color: white;
+    background-color: black;
+}
+
+#changements{
+    padding: 12px 20px;
+    border-color: white;
+    border-radius: 60px;
+    background-color: white;
+    color: black;
+}
+#nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 30px 7%;
 }
 
 
