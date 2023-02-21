@@ -46,13 +46,17 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+main {
+	width: 80%;
+	margin: auto;
+}
 /** end reset css**/
 body {
-	max-width: 1140px;
-	margin:auto;
+	/*max-width: 1140px;*/
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 	background-color: #FFFEF8;
+	width: 100%;
 }
 header {
 	display: flex;
