@@ -8,8 +8,13 @@ let imagesData = [];
 //
 const adminBar1 = document.querySelector(".modif-bar-1");
 const adminBar2 = document.querySelector(".modif-bar-2");
-const login = document.getElementById("login");
+const modifBar = document.querySelector(".modif-bar");
 
+const iconEdit = document.querySelector("icon-edit");
+const iconEdit1 = document.getElementById("icon-edit-1");
+const changement = document.getElementById("changements");
+
+const login = document.getElementById("login");
 
 
 function adminBar(){
@@ -17,6 +22,7 @@ function adminBar(){
 const token =  localStorage.getItem("authToken");
 
 if(token){
+
 
 login.textContent = "logout";
 
@@ -36,6 +42,91 @@ adminBar1.appendChild(adminBar2);
 adminBar2.appendChild(iconModif);
 adminBar2.appendChild(pEdit);
 adminBar2.appendChild(pChang);
+
+
+adminBar1.style.display = 'flex';
+adminBar1.style.flexDirection = 'row';
+adminBar1.style.justifyContent = 'center';
+adminBar1.style.alignItems = 'center';
+adminBar1.style.width = '100%';
+adminBar1.style.margin = '0 auto';
+adminBar1.style.height = '60px';
+adminBar1.style.backgroundColor = 'black';
+adminBar1.style.color = 'white';
+
+adminBar2.style.display = 'flex';
+adminBar2.style.flexDirection = 'row';
+adminBar2.style.justifyContent = 'center';
+adminBar2.style.alignItems = 'center';
+adminBar2.style.width = '100%';
+
+modifBar.style.margin = '0px 10px';
+
+modifBar2.style.display = 'flex';
+modifBar2.style.flexDirection = 'row';
+modifBar2.style.justifyContent = 'center';
+modifBar2.style.alignItems = 'center';
+modifBar2.style.width = '100%';
+
+iconEdit.style.fontSize = '16px';
+
+iconEdit1.style.color = 'white';
+iconEdit1.style.backgroundColor = 'black';
+
+changement.style.padding = '12px 20px';
+changement.style.borderColor = 'white';
+changement.style.borderRadius = '60px';
+changement.style.backgroundColor = 'white';
+changement.style.color = 'black';
+
+/*adminBar1.style = {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems:'center',
+    width: '100%',
+    margin: '0 auto',
+    height: '60px',
+    backgroundColor: 'black',
+    color: 'white'
+};
+
+adminBar2.style = {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%'
+}
+modifBar.style = {
+    margin: '0px 10px'
+}   /*
+/*
+modifBar2.style = {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%'
+}
+
+iconEdit.style = {
+    fontSize: '16px'
+}
+
+iconEdit1.style = {
+    color: 'white',
+    backgroundColor: 'black'
+}
+
+changement.style = {
+    padding: '12px 20px',
+    borderColor: 'white',
+    borderRadius: '60px',
+    backgroundColor: 'white',
+    color: 'black'
+}*/
+
 
 }
 }
