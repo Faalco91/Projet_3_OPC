@@ -10,7 +10,6 @@ const adminBar1 = document.querySelector(".modif-bar-1");
 const adminBar2 = document.querySelector(".modif-bar-2");
 const modifBar = document.querySelector(".modif-bar");
 
-const iconEdit = document.querySelector("icon-edit");
 const iconEdit1 = document.getElementById("icon-edit-1");
 const changement = document.getElementById("changements");
 
@@ -44,6 +43,8 @@ adminBar2.appendChild(pEdit);
 adminBar2.appendChild(pChang);
 
 
+
+
 adminBar1.style.display = 'flex';
 adminBar1.style.flexDirection = 'row';
 adminBar1.style.justifyContent = 'center';
@@ -60,18 +61,11 @@ adminBar2.style.justifyContent = 'center';
 adminBar2.style.alignItems = 'center';
 adminBar2.style.width = '100%';
 
-modifBar.style.margin = '0px 10px';
-
-modifBar2.style.display = 'flex';
-modifBar2.style.flexDirection = 'row';
-modifBar2.style.justifyContent = 'center';
-modifBar2.style.alignItems = 'center';
-modifBar2.style.width = '100%';
-
-iconEdit.style.fontSize = '16px';
-
 iconEdit1.style.color = 'white';
+iconEdit1.style.fontSize = '16px';
 iconEdit1.style.backgroundColor = 'black';
+
+modifBar.style.margin = '0px 10px';
 
 changement.style.padding = '12px 20px';
 changement.style.borderColor = 'white';
@@ -126,8 +120,6 @@ changement.style = {
     backgroundColor: 'white',
     color: 'black'
 }*/
-
-
 }
 }
 
