@@ -1,23 +1,33 @@
 
 //Commande pour ciblé la div class="gallery".
 const gallery = document.querySelector(".gallery");
-//const ayant ciblé la div class = "filtres".
+//Const ayant ciblé la div class = "filtres".
 const filtres = document.querySelector(".filtres");
-// variable qui permet de créer un tableau dans lequel on va par la suite affecter les images via l'API.
+//Variable qui permet de créer un tableau dans lequel on va par la suite affecter les images via l'API.
 let imagesData = [];
-//
+//Consts pour créer la barre de modif d'admin
 const adminBar1 = document.querySelector(".modif-bar-1");
 const adminBar2 = document.querySelector(".modif-bar-2");
 const iconEdit = document.querySelector(".icon-edit");
 const login = document.getElementById("login");
+//Const pour créer les elements modif sous le portrait
 const modifPortrait = document.getElementById("modif-portrait");
+//
+const mesProjets = document.getElementById("mes-projets");
+//Const pour interface modif vers la modal
+const projetsModif = document.getElementById("projets-modif");
+//
+const modifIconLiens = document.getElementById("modif-icon-liens");
 
-function adminBar(){
 
+
+
+
+
+function adminContent(){
 const token =  localStorage.getItem("authToken");
 
 if(token){
-
 
 login.textContent = "logout";
 
@@ -27,6 +37,10 @@ iconModif.setAttribute("id", "icon-edit-1");
 const iconModif2 = document.createElement("i");
 iconModif2.classList.add("icon-edit", "fa", "fa-regular", "fa-pen-to-square");
 iconModif2.setAttribute("id", "icon-edit-2");
+const iconModif3 = document.createElement("i");
+iconModif3.classList.add("icon-edit", "fa", "fa-regular", "fa-pen-to-square");
+iconModif3.setAttribute("id", "icon-edit-3");
+
 
 const pEdit = document.createElement("p");
 pEdit.classList.add("modif-bar");
@@ -39,6 +53,9 @@ pChang.textContent = "Publier les changements";
 const modif = document.createElement("a");
 modif.classList.add("a-modif"); 
 modif.textContent = "modifier";
+const modif2 = document.createElement("a");
+modif2.classList.add("a-modif");
+modif2.textContent = "modifier";
 
 
 adminBar1.appendChild(adminBar2);
@@ -47,6 +64,10 @@ adminBar2.appendChild(pEdit);
 adminBar2.appendChild(pChang);
 modifPortrait.appendChild(iconModif2);
 modifPortrait.appendChild(modif);
+mesProjets.appendChild(projetsModif);
+projetsModif.appendChild(modifIconLiens);
+modifIconLiens.appendChild(iconModif3);
+modifIconLiens.appendChild(modif2);
 
 
 adminBar1.style.cssText = 'display: flex; flex-direction: row; justify-content: center; align-items: center; width: 100%; margin: 0 auto; height: 60px; background-color: black; color: white;';
@@ -55,7 +76,9 @@ pChang.style.cssText = 'margin: 0px 10px; padding: 12px 20px; border-color: whit
 pEdit.style.cssText = 'margin: 0px 10px;';
 
 modifPortrait.style.cssText = 'display: flex; width: 80%; align-items: center; flex-direction: row; padding-top: 10px; margin: auto;';
-
+projetsModif.style.cssText = "display: flex; flex-direction: row; justify-content: center; margin-top: 10px; margin-left: 30px; margin-bottom: auto; width: 100%;";
+mesProjets.style.cssText = 'display: flex; flex-direction: column; justify-content: center; align-items: center; padding-top: 75px;';
+modifIconLiens.style.cssText = 'display: flex; align-items: center; justify-content: space-around; height: 35px; width: 90px; margin-left: 25px;';
 
 /*adminBar1.style.flexDirection = 'row';
 adminBar1.style.justifyContent = 'center';
