@@ -7,15 +7,18 @@ const filtres = document.querySelector(".filtres");
 let imagesData = [];
 //
 const adminBar1 = document.querySelector(".modif-bar-1");
-const adminBar2 = document.querySelector(".modif-bar-2")
+const adminBar2 = document.querySelector(".modif-bar-2");
+const login = document.getElementById("login");
+
 
 
 function adminBar(){
 
 const token =  localStorage.getItem("authToken");
 
-if(userIsLoggedIn()){
 if(token){
+
+login.textContent = "logout";
 
 const iconModif = document.createElement("i");
 iconModif.classList.add("icon-edit","fa","fa-regular","fa-pen-to-square");
@@ -36,7 +39,7 @@ adminBar2.appendChild(pChang);
 
 }
 }
-}
+
 
 
 
@@ -75,7 +78,7 @@ function showImg(b, imagesData){
 function createFilter(name){
     const token =  localStorage.getItem("authToken");
 // erreur rencontré "impossible de lire propriété name sur élément undefined" donc condition de mise en marche de la fonction que si name !== undefined
-if(token){
+if(!token){
     const tous = document.createElement("button");
     tous.innerHTML = 'Tous';
     tous.className = 'btn-filter';
