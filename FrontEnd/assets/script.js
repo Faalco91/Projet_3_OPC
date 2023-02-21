@@ -10,7 +10,7 @@ const adminBar1 = document.querySelector(".modif-bar-1");
 const adminBar2 = document.querySelector(".modif-bar-2");
 const iconEdit = document.querySelector(".icon-edit");
 const login = document.getElementById("login");
-
+const modifPortrait = document.getElementById("modif-portrait");
 
 function adminBar(){
 
@@ -24,6 +24,9 @@ login.textContent = "logout";
 const iconModif = document.createElement("i");
 iconModif.classList.add("icon-edit","fa","fa-regular","fa-pen-to-square");
 iconModif.setAttribute("id", "icon-edit-1");
+const iconModif2 = document.createElement("i");
+iconModif2.classList.add("icon-edit", "fa", "fa-regular", "fa-pen-to-square");
+iconModif2.setAttribute("id", "icon-edit-2");
 
 const pEdit = document.createElement("p");
 pEdit.classList.add("modif-bar");
@@ -33,15 +36,27 @@ pChang.classList.add("modif-bar");
 pChang.setAttribute("id", "changements");
 pChang.textContent = "Publier les changements";
 
+const modif = document.createElement("a");
+modif.classList.add("a-modif"); 
+modif.textContent = "modifier";
+
+
 adminBar1.appendChild(adminBar2);
 adminBar2.appendChild(iconModif);
 adminBar2.appendChild(pEdit);
 adminBar2.appendChild(pChang);
-
-
+modifPortrait.appendChild(iconModif2);
+modifPortrait.appendChild(modif);
 
 
 adminBar1.style.cssText = 'display: flex; flex-direction: row; justify-content: center; align-items: center; width: 100%; margin: 0 auto; height: 60px; background-color: black; color: white;';
+adminBar2.style.cssText = 'display: flex; flex-direction: row; justify-content: center; align-items: center; width: 100%;';
+pChang.style.cssText = 'margin: 0px 10px; padding: 12px 20px; border-color: white; border-radius: 60px; background-color: white; color: black;';
+pEdit.style.cssText = 'margin: 0px 10px;';
+
+modifPortrait.style.cssText = 'display: flex; width: 80%; align-items: center; flex-direction: row; padding-top: 10px; margin: auto;';
+
+
 /*adminBar1.style.flexDirection = 'row';
 adminBar1.style.justifyContent = 'center';
 adminBar1.style.alignItems = 'center';
@@ -51,16 +66,10 @@ adminBar1.style.height = '60px';
 adminBar1.style.backgroundColor = 'black';
 adminBar1.style.color = 'white';*/
 
-
-
-adminBar2.style.cssText = 'display: flex; flex-direction: row; justify-content: center; align-items: center; width: 100%;';
 /*adminBar2.style.flexDirection = 'row';
 adminBar2.style.justifyContent = 'center';
 adminBar2.style.alignItems = 'center';
 adminBar2.style.width = '100%';*/
-pChang.style.cssText = 'margin: 0px 10px; padding: 12px 20px; border-color: white; border-radius: 60px; background-color: white; color: black;';
-pEdit.style.cssText = 'margin: 0px 10px;';
-
 
 /*iconEdit1.style.fontSize = '16px';
 iconEdit1.style.backgroundColor = 'black';
