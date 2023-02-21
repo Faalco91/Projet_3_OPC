@@ -8,11 +8,7 @@ let imagesData = [];
 //
 const adminBar1 = document.querySelector(".modif-bar-1");
 const adminBar2 = document.querySelector(".modif-bar-2");
-const modifBar = document.querySelector(".modif-bar");
-
-const iconEdit1 = document.getElementById("icon-edit-1");
-const changement = document.getElementById("changements");
-
+const iconEdit = document.querySelector(".icon-edit");
 const login = document.getElementById("login");
 
 
@@ -45,33 +41,29 @@ adminBar2.appendChild(pChang);
 
 
 
-adminBar1.style.display = 'flex';
-adminBar1.style.flexDirection = 'row';
+adminBar1.style.cssText = 'display: flex; flex-direction: row; justify-content: center; align-items: center; width: 100%; margin: 0 auto; height: 60px; background-color: black; color: white;';
+/*adminBar1.style.flexDirection = 'row';
 adminBar1.style.justifyContent = 'center';
 adminBar1.style.alignItems = 'center';
 adminBar1.style.width = '100%';
 adminBar1.style.margin = '0 auto';
 adminBar1.style.height = '60px';
 adminBar1.style.backgroundColor = 'black';
-adminBar1.style.color = 'white';
+adminBar1.style.color = 'white';*/
 
-adminBar2.style.display = 'flex';
-adminBar2.style.flexDirection = 'row';
+
+
+adminBar2.style.cssText = 'display: flex; flex-direction: row; justify-content: center; align-items: center; width: 100%;';
+/*adminBar2.style.flexDirection = 'row';
 adminBar2.style.justifyContent = 'center';
 adminBar2.style.alignItems = 'center';
-adminBar2.style.width = '100%';
+adminBar2.style.width = '100%';*/
+pChang.style.cssText = 'margin: 0px 10px; padding: 12px 20px; border-color: white; border-radius: 60px; background-color: white; color: black;';
+pEdit.style.cssText = 'margin: 0px 10px;';
 
-iconEdit1.style.color = 'white';
-iconEdit1.style.fontSize = '16px';
+
+/*iconEdit1.style.fontSize = '16px';
 iconEdit1.style.backgroundColor = 'black';
-
-modifBar.style.margin = '0px 10px';
-
-changement.style.padding = '12px 20px';
-changement.style.borderColor = 'white';
-changement.style.borderRadius = '60px';
-changement.style.backgroundColor = 'white';
-changement.style.color = 'black';
 
 /*adminBar1.style = {
     display: 'flex',
