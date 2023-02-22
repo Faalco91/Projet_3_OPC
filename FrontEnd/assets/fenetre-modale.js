@@ -24,7 +24,10 @@ const images = document.querySelectorAll("images");
 //Fonction qui va nous permettre de générer les images dans la page avec leurs texte
 function createImage2(a){
 
+    const token =  localStorage.getItem("authToken");
 
+    if(token){
+        
  
     for(let i = 0; i < a.length; i++){
        //Commandes pour créer les élements figure>img,figcaption
@@ -82,6 +85,7 @@ function createImage2(a){
     
     return true;
 }
+}
 
 
 /*for(let i = 0; i < images.length; i++){
@@ -99,6 +103,9 @@ function createImage2(a){
 
 //Fonction qui va permettre de supprimer les images que l'on choisiras de supprimer via le bouton delete
 function deleteImg(){
+    const token =  localStorage.getItem("authToken");
+
+if(token){
     fetch("http://localhost:5678/api/works/1" + imgasupp.id, {
         method: "DELETE",
     })
@@ -113,7 +120,7 @@ function deleteImg(){
         console.log(error);
     });
 }
-
+}
 
 btn.onclick = function disappearsmodal() {
     modal.style.display = "block";
@@ -138,4 +145,4 @@ fetch('http://localhost:5678/api/works')
         imagesData2 = el;
         return el;
     })
-    .then(data => createImage2(data)) 
+    .then(data => createImage2(data))
