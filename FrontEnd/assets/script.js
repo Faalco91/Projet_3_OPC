@@ -18,6 +18,15 @@ const mesProjets = document.getElementById("mes-projets");
 const projetsModif = document.getElementById("projets-modif");
 //
 const modifIconLiens = document.getElementById("modif-icon-liens");
+//
+/*const modalAside = document.getElementById("modal");
+//
+const modalGalerie = document.getElementById("modal_galerie");
+//
+const gallery2 = document.querySelector(".gallery2");
+//
+const bottomModal = document.getElementById("bottom_modal");*/
+
 
 
 
@@ -57,17 +66,24 @@ const modif2 = document.createElement("a");
 modif2.classList.add("a-modif");
 modif2.textContent = "modifier";
 
+const close = document.createElement("span");
+close.classList.add("close");
+close.textContent = "&times;";
+
 
 adminBar1.appendChild(adminBar2);
 adminBar2.appendChild(iconModif);
 adminBar2.appendChild(pEdit);
 adminBar2.appendChild(pChang);
+
 modifPortrait.appendChild(iconModif2);
 modifPortrait.appendChild(modif);
+
 mesProjets.appendChild(projetsModif);
 projetsModif.appendChild(modifIconLiens);
 modifIconLiens.appendChild(iconModif3);
 modifIconLiens.appendChild(modif2);
+/*modalGalerie.appendChild(close);*/
 
 
 adminBar1.style.cssText = 'display: flex; flex-direction: row; justify-content: center; align-items: center; width: 100%; margin: 0 auto; height: 60px; background-color: black; color: white;';

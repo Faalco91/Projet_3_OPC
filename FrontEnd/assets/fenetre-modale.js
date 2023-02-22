@@ -23,6 +23,8 @@ const images = document.querySelectorAll("images");
 
 //Fonction qui va nous permettre de générer les images dans la page avec leurs texte
 function createImage2(a){
+
+
  
     for(let i = 0; i < a.length; i++){
        //Commandes pour créer les élements figure>img,figcaption
@@ -80,6 +82,7 @@ function createImage2(a){
     
     return true;
 }
+
 
 /*for(let i = 0; i < images.length; i++){
     const images = document.querySelectorAll("imgs2");
