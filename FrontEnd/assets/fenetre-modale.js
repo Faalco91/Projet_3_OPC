@@ -18,9 +18,6 @@ modal.focus();
 const images = document.querySelectorAll("images");
 
 
-
-
-
 //Fonction qui va nous permettre de générer les images dans la page avec leurs texte
 function createImage2(a){
 
@@ -34,6 +31,7 @@ function createImage2(a){
        const figure = document.createElement("figure");
        figure.className = a[i].category.name;
        figure.classList.add("imgs2");
+       figure.setAttribute("id","" + (i+1));
        const imgArts = document.createElement("img");
        imgArts.classList.add("images");
        const figcaption = document.createElement("figcaption");
@@ -57,11 +55,27 @@ function createImage2(a){
        figcaption.appendChild(text);
        imgArts.crossOrigin = "anonymous";
        imgArts.src = a[i].imageUrl;
+
        buttonSupp.addEventListener("click", function() {
-        var imgasupp = this.previousElementSibling;
-        modal.removeChild(imgasupp);
-        
-    });
+        const token =  localStorage.getItem("authToken");
+        var imgasupp = this.parentElement.id;//récupère l'id de la figure parent
+        fetch(`http://localhost:5678/api/works/${imgasupp}`, {
+            method: "DELETE" ,
+            headers: {
+            Authorization: `Bearer ${token}`,
+            },
+        })
+          .then(response => {
+            if (response.ok) {
+              // Si la suppression réussit, supprimez également l'élément du DOM
+              const figureToRemove = document.getElementById(imgasupp);
+              figureToRemove.parentNode.removeChild(figureToRemove);
+            } else {
+                throw new Error("La suppression à échoué");
+            }
+          })
+          .catch(error => console.error(error));
+});
 
 
        /*buttonSupp.addEventListener("click", function() {
@@ -88,6 +102,7 @@ function createImage2(a){
 }
 
 
+
 /*for(let i = 0; i < images.length; i++){
     const images = document.querySelectorAll("imgs2");
 
@@ -102,25 +117,6 @@ function createImage2(a){
 }*/
 
 //Fonction qui va permettre de supprimer les images que l'on choisiras de supprimer via le bouton delete
-function deleteImg(){
-    const token =  localStorage.getItem("authToken");
-
-if(token){
-    fetch("http://localhost:5678/api/works/1" + imgasupp.id, {
-        method: "DELETE",
-    })
-    .then(function(response){
-        if(response.ok){
-            imgasupp.remove();
-        } else {
-            throw new Error("Erreur de suppression");
-        }
-    })
-    .catch(function(error){
-        console.log(error);
-    });
-}
-}
 
 btn.onclick = function disappearsmodal() {
     modal.style.display = "block";
@@ -135,6 +131,7 @@ window.onclick = function exitatanywhere(event){
         modal.style.display = "none";
     }
 }
+
 
 //Commande pour appeler l'API/works
 fetch('http://localhost:5678/api/works')
