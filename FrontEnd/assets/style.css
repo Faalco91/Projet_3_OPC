@@ -335,7 +335,7 @@ footer nav ul {
 #modal_galerie{
     display: flex;
 	width: 630px;
-	height: 730px;
+	height: auto;
     flex-direction: column;
     justify-content: center;
     align-items: center;
