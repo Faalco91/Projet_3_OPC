@@ -68,8 +68,10 @@ function createImage2(a){
           .then(response => {
             if (response.ok) {
               // Si la suppression réussit, supprimez également l'élément du DOM
-              const figureToRemove = document.getElementById(imgasupp);
-              figureToRemove.parentNode.removeChild(figureToRemove);
+             /* const figureToRemove = document.getElementById(imgasupp);
+              figureToRemove.parentNode.removeChild(figureToRemove);*/
+              const figureToHide = document.getElementById(imgasupp);
+              figureToHide.style.display = "none";
             } else {
                 throw new Error("La suppression à échoué");
             }
