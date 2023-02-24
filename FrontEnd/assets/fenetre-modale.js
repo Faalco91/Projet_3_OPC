@@ -36,7 +36,7 @@ function createImage2(a){
        imgArts.classList.add("images");
        const figcaption = document.createElement("figcaption");
        //Commande pour ajouter le texte sous les images
-       const text = document.createTextNode(a[i].edit);
+       const text = document.createTextNode("éditer");
        const buttonSupp = document.createElement("button")
        buttonSupp.classList.add("trash-button");
        const trash = document.createElement("i");
