@@ -319,8 +319,9 @@ footer nav ul {
 
 
 
+/* CSS pour la fenetre-modal.html */
 .modal-content{
-	display: none;
+	/*display: none;*/
 	position: fixed;
 	z-index: 1;
 	left: 0;
@@ -360,7 +361,7 @@ footer nav ul {
 	text-decoration: none;
 	cursor: pointer;
   }
-#modaltitle{
+.modaltitle{
 	display: flex;
     justify-content: center;
     font-family: 'Work Sans';
@@ -381,7 +382,7 @@ footer nav ul {
 	height: 130px;
 	margin: 2px;
 }
-#bottom_modal{
+.bottom_modal{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -424,4 +425,34 @@ footer nav ul {
     padding: 4px;
     border-radius: 2px;
     background-color: black;
+}
+
+
+
+
+
+/* CSS pour ajout-photo.html */
+#modal-submit{
+	display: none;
+    display: flex;
+    width: 630px;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15% auto;
+    border-radius: 10px;
+    background-color: #fffef8;
+}
+#valider{
+    display: flex;
+    justify-content: center;
+	justify-content: center;
+	color: white;
+	background-color: #A7A7A7;
+	margin: 0px 0px 5px 0px;
+	width: 237px;
+	height: 36px;
+	border: 0px;
+    border-radius: 60px;
 }

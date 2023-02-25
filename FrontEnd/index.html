@@ -57,15 +57,42 @@
 			<aside id="modal" class="modal-content" aria-hidden="true" role="dialog" aria-modal="" aria-labelledby="modaltitle" tabindex="0">
 				<div id="modal_galerie">
 					<span class="close">&times;</span>
-					<h1 id="modaltitle">Galerie photo</h1>
+					<h1 class="modaltitle">Galerie photo</h1>
 					<div class="gallery2">
 					</div>
-					<div id="bottom_modal">
+					<div class="bottom_modal">
 					<input type="submit" value="Ajouter une photo" id="addphoto">
-					<a href=""><p id="supp_galerie">Supprimer la galerie</p></a>
+					<a href="#modal-photo"><p id="supp_galerie">Supprimer la galerie</p></a>
 					</div>
 				</div> 
-				
+			</aside>
+			<aside id="modal-photo" class="modal-content" aria-hidden="true" role="dialog" aria-modal="" aria-labelledby="modalsubmit"> 
+				<div id="modal-submit">
+					<span class="close">&times;</span>
+					<h1 class="modaltitle">Ajout photo</h1>
+					<div class="principal-content">
+					</div>
+					<div class="bottom-modal-2">
+					<input type="submit" value="Valider" id="valider">
+					</div>
+					<!-- <form>
+						<label for="image">Choisir une image:</label>
+						<input type="file" id="image" name="image" accept="image/*">
+					  
+						<label for="titre">Titre:</label>
+						<input type="text" id="titre" name="titre">
+					  
+						<label for="categorie">Catégorie:</label>
+						<select id="categorie" name="categorie">
+						  <option value="cat1">Objets</option>
+						  <option value="cat2">Appartements</option>
+						  <option value="cat3">Hotel & restaurants</option>
+						</select>
+					  
+						<input type="submit" value="Valider">
+					  </form> -->
+				</div>
+			</aside>
 		</div>
 		<div class="filtres">
 			
@@ -97,5 +124,6 @@
 </footer>
 <script src="./assets/script.js"></script>
 <script src="./assets/fenetre-modale.js"></script>
+<script src="./assets/ajout-photo.js"></script>
 </body>
 </html>

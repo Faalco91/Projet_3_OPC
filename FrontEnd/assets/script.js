@@ -23,6 +23,7 @@ const modalAside = document.getElementById("modal");
 //
 const modalGalerie = document.getElementById("modal_galerie");
 //
+const gallery2 = document.querySelector(".gallery2");
 //
 const bottomModal = document.getElementById("")
 

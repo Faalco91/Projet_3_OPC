@@ -1,9 +1,9 @@
 //Commande pour ciblé la div class="gallery2".
-const gallery2 = document.querySelector(".gallery2");
+const gallery_2 = document.querySelector(".gallery2");
 //
 const modal_galerie = document.getElementById("modal_galerie");
 //
-const bottom = document.getElementById("bottom_modal");
+const bottom = document.querySelector(".bottom_modal");
 // variable qui permet de créer un tableau dans lequel on va par la suite affecter les images via l'API.
 let imagesData2 = [];
 //
@@ -16,6 +16,18 @@ const modal = document.getElementById("modal");
 const exit = document.getElementsByClassName("close")[0];
 modal.focus();
 const images = document.querySelectorAll("images");
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //Fonction qui va nous permettre de générer les images dans la page avec leurs texte
@@ -47,7 +59,7 @@ function createImage2(a){
 
     
        //Commandes pour placer les éléments aux bons endroits dans le HTML
-       gallery2.appendChild(figure);
+       gallery_2.appendChild(figure);
        figure.appendChild(imgArts);
        figure.appendChild(figcaption);
        figure.appendChild(buttonSupp);
@@ -91,7 +103,7 @@ function createImage2(a){
 
     const bordure = document.createElement("div");
     bordure.className = "bordure";
-    gallery2.appendChild(bordure);
+    gallery_2.appendChild(bordure);
 
     const addphoto = document.querySelector("#addphoto");
     bottom.appendChild(addphoto);
