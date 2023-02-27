@@ -25,6 +25,8 @@ const modalGalerie = document.getElementById("modal_galerie");
 //
 const gallery2 = document.querySelector(".gallery2");
 //
+/*const modal1 = document.getElementById("modal");
+const modal2 = document.getElementById("modal-photo");*/
 //const bottomModal = document.getElementById("")
 
 
@@ -93,75 +95,8 @@ function adminContent() {
         projetsModif.style.cssText = "display: flex; flex-direction: row; justify-content: center; margin-top: 10px; margin-left: 30px; margin-bottom: auto; width: 100%;";
         mesProjets.style.cssText = 'display: flex; flex-direction: column; justify-content: center; align-items: center; padding-top: 75px;';
         modifIconLiens.style.cssText = 'display: flex; align-items: center; justify-content: space-around; height: 35px; width: 90px; margin-left: 25px;';
-
-        /*adminBar1.style.flexDirection = 'row';
-        adminBar1.style.justifyContent = 'center';
-        adminBar1.style.alignItems = 'center';
-        adminBar1.style.width = '100%';
-        adminBar1.style.margin = '0 auto';
-        adminBar1.style.height = '60px';
-        adminBar1.style.backgroundColor = 'black';
-        adminBar1.style.color = 'white';*/
-
-        /*adminBar2.style.flexDirection = 'row';
-        adminBar2.style.justifyContent = 'center';
-        adminBar2.style.alignItems = 'center';
-        adminBar2.style.width = '100%';*/
-
-        /*iconEdit1.style.fontSize = '16px';
-        iconEdit1.style.backgroundColor = 'black';
-        
-        /*adminBar1.style = {
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center',
-            alignItems:'center',
-            width: '100%',
-            margin: '0 auto',
-            height: '60px',
-            backgroundColor: 'black',
-            color: 'white'
-        };
-        
-        adminBar2.style = {
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: '100%'
-        }
-        modifBar.style = {
-            margin: '0px 10px'
-        }   /*
-        /*
-        modifBar2.style = {
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: '100%'
-        }
-        
-        iconEdit.style = {
-            fontSize: '16px'
-        }
-        
-        iconEdit1.style = {
-            color: 'white',
-            backgroundColor: 'black'
-        }
-        
-        changement.style = {
-            padding: '12px 20px',
-            borderColor: 'white',
-            borderRadius: '60px',
-            backgroundColor: 'white',
-            color: 'black'
-        }*/
     }
 }
-
-
 
 
 
@@ -180,7 +115,6 @@ function showImg(b, imagesData) {
     /* On filtre le tableau imageData t.q result = les images qui ont pour .name le meme nom que celui du boutton associé. 
     ex: button="Objets" & .name = "Objets" */
     let result = imagesData.filter(image => image.category.name == b);
-
 
     /* Condition spécifique pour le fonctionnement du bouton "Tous" du filtre, qui va permettre donc d'afficher toute les images quand 
     la variable b passée en argument de la fonction aura pour valeur "tous. */
@@ -256,10 +190,22 @@ function createImage(a) {
         imgArts.crossOrigin = "anonymous";
         imgArts.src = a[i].imageUrl;
     }
-
-    return true;
+  return true;
 }
 
+
+/*window.onclick = function exitwindow(event) {
+    var modal1 = document.getElementById('modal1');
+    var modal2 = document.getElementById('modal2');
+    if (event.target == modal1) {
+      modal1.style.display = "none";
+    } else if (event.target == modal2) {
+      modal2.style.display = "none";
+    } else {
+      modal1.style.display = "none";
+      modal2.style.display = "none";
+    }
+  }*/
 
 //Commande pour appeler l'API/works
 fetch('http://localhost:5678/api/works')
