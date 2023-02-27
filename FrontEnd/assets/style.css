@@ -99,6 +99,9 @@ header {
 	margin: 0px 0px 50px 0px;
     flex-direction: column;
 }
+#login{
+	cursor: pointer;
+}
 #login-section{
 	height: 100%;
 }
@@ -321,7 +324,7 @@ footer nav ul {
 
 /* CSS pour la fenetre-modal.html */
 .modal-content{
-	/*display: none;*/
+	display: none;
 	position: fixed;
 	z-index: 1;
 	left: 0;

@@ -69,8 +69,10 @@ function createImage2(a){
        imgArts.src = a[i].imageUrl;
 
        buttonSupp.addEventListener("click", function() {
+
         const token =  localStorage.getItem("authToken");
         var imgasupp = this.parentElement.id;//récupère l'id de la figure parent
+
         fetch(`http://localhost:5678/api/works/${imgasupp}`, {
             method: "DELETE" ,
             headers: {
@@ -80,46 +82,31 @@ function createImage2(a){
           .then(response => {
             if (response.ok) {
               // Si la suppression réussit, supprimez également l'élément du DOM
-             /* const figureToRemove = document.getElementById(imgasupp);
-              figureToRemove.parentNode.removeChild(figureToRemove);*/
-              const figureToHide = document.getElementById(imgasupp);
-              figureToHide.style.display = "none";
+              const figureToRemove = document.querySelectorAll(`[id="${imgasupp}"]`);
+              figureToRemove.forEach(el => el.parentNode.removeChild(el));
+              /*const figureToHide = document.getElementById(imgasupp);
+              figureToHide.style.display = "none";*/
             } else {
                 throw new Error("La suppression à échoué");
             }
           })
           .catch(error => console.error(error));
 });
-
-
-       /*buttonSupp.addEventListener("click", function() {
-            var imgasupp = this.previousElementSibling;
-            modal.removeChild(imgasupp);
-        });
-        imgArts[i].parentElement.appendChild(buttonSupp);*/
-
        
    }
-
     const bordure = document.createElement("div");
     bordure.className = "bordure";
-    gallery_2.appendChild(bordure);
-
+    gallery2.appendChild(bordure);
     const addphoto = document.querySelector("#addphoto");
     bottom.appendChild(addphoto);
-
     const supp = document.querySelector("#supp_galerie");
     bottom.appendChild(supp);
     
     return true;
 }
 }
-
-
-
 /*for(let i = 0; i < images.length; i++){
     const images = document.querySelectorAll("imgs2");
-
     var buttonSupp = document.createElement("button")
     buttonSupp.textContent = "Supprimer";
     buttonSupp.addEventListener("click", function() {
@@ -127,16 +114,12 @@ function createImage2(a){
         modal.removeChild(imgasupp);
     });
     images[i].parentElement.appendChild(buttonSupp);
-
 }*/
-
 //Fonction qui va permettre de supprimer les images que l'on choisiras de supprimer via le bouton delete
-
 btn.onclick = function disappearsmodal() {
     modal.style.display = "block";
     console.log(btn);
 }
-
 exit.onclick = function exitmodal(){
     modal.style.display = "none";
 }
@@ -145,8 +128,6 @@ window.onclick = function exitatanywhere(event){
         modal.style.display = "none";
     }
 }
-
-
 //Commande pour appeler l'API/works
 fetch('http://localhost:5678/api/works')
 	.then(res => res.json())
