@@ -446,6 +446,7 @@ footer nav ul {
 
 
 /* CSS pour ajout-photo.html */
+
 #modal-submit{
     display: flex;
     width: 630px;
@@ -457,6 +458,37 @@ footer nav ul {
     border-radius: 10px;
     background-color: white;
 }
+
+#labelElement{
+	display: flex;
+	align-items: center;
+	width: 420px;
+	height: 170px;
+	border-radius: 3px;
+	background-color: #E8F1F7;
+	margin-bottom: 25px;
+}
+
+#buttonphotoAdd{
+	display: flex;
+    justify-content: center;
+	align-items: center;
+	width: 173px;
+	height: 36px;
+	size: 14px;
+    color: #306685;
+    margin: 2em auto;
+    border: 0px;
+    border-radius: 60px;
+    background-color: #CBD6DC;
+}
+
+#inputFile{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /*#valider{
     display: flex;
     justify-content: center;
@@ -479,3 +511,5 @@ border: 0px;
 margin-top: 5px;
 margin-bottom: 13px;
 }
+
+

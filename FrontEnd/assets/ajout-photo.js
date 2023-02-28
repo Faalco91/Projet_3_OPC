@@ -14,16 +14,28 @@ if(token){
 
     const formAdd = document.createElement("form");
 
+
     const imageLabel = document.createElement("label");
     //imageLabel.textContent = "+ Ajouter photo";
     imageLabel.setAttribute("for","image");
 
+    const buttonPhotoAdd = document.createElement("button");
+    buttonPhotoAdd.setAttribute("type", "submit");
+    buttonPhotoAdd.setAttribute("value", "buttonphotoAdd");
+    buttonPhotoAdd.setAttribute("id", "buttonphotoAdd");
+    buttonPhotoAdd.textContent = "+ Ajouter photo";
+
     const imageInput = document.createElement("input");
     imageInput.setAttribute("type", "file");
-    imageInput.setAttribute("id", "imgPhoto");
+    imageInput.setAttribute("id", "inputFile");
     imageInput.setAttribute("name", "imgPhoto");
     imageInput.setAttribute("accept", "image/*");
-    imageInput.textContent = "+ Ajouter photo";
+    imageInput.setAttribute("aria-label", "Ajouter photo");
+
+    const labelElement = document.createElement("label");
+    labelElement.setAttribute("id", "labelElement");
+    labelElement.htmlFor = "inputFile";
+
 
     const titleLabel = document.createElement("label");
     titleLabel.textContent = "Titre";
@@ -76,7 +88,8 @@ if(token){
     //modalSubmit.appendChild(close2);
     principalContent.appendChild(formAdd);
     formAdd.appendChild(imageLabel);
-    formAdd.appendChild(imageInput);
+    formAdd.appendChild(buttonPhotoAdd);
+    buttonPhotoAdd.appendChild(imageInput);
     formAdd.appendChild(titleLabel);
     formAdd.appendChild(titleInput);
     formAdd.appendChild(categorieLabel);
@@ -86,6 +99,9 @@ if(token){
     categorieSelect.appendChild(objectCategorie);
     categorieSelect.appendChild(appartementsCategorie);
     categorieSelect.appendChild(hotelRestoCategorie);
+    labelElement.appendChild(buttonPhotoAdd);
+    labelElement.appendChild(imageInput);
+    imageLabel.appendChild(labelElement);
 
     const bordure2 = document.createElement("div");
     bordure2.setAttribute("id", "bordure2");
@@ -98,6 +114,7 @@ if(token){
     bordure2.style.cssText = "border-bottom: 1px solid #a7a7a7; width: 100%; margin-top: 25px;";
     submitPhoto.style.cssText = "display: flex; justify-content: center; color: white; background-color: #A7A7A7; margin: 2em auto; width: 237px; height: 36px; border: 0px; border-radius: 60px;";
     bottomModal2.style.cssText = "margin-bottom: 20px;";
+    imageInput.style.display = "none";
 }
 
 
