@@ -115,6 +115,11 @@ if(token){
     submitPhoto.style.cssText = "display: flex; justify-content: center; color: white; background-color: #A7A7A7; margin: 2em auto; width: 237px; height: 36px; border: 0px; border-radius: 60px;";
     bottomModal2.style.cssText = "margin-bottom: 20px;";
     imageInput.style.display = "none";
+
+    buttonPhotoAdd.addEventListener("click", function(){
+        imageInput.click();
+    
+    });
 }
 
 
@@ -125,6 +130,8 @@ addLinkPhoto.onclick = function appearmodalPhoto(){
 close2.onclick = function exitmodalPhoto(){
     modalPhoto2.style.display = "none";
 }
+
+
 
 /*window.onclick = function exitatanywhere(event) {
     if (event.target == modalPhoto2) {
