@@ -19,6 +19,10 @@ if(token){
     //imageLabel.textContent = "+ Ajouter photo";
     imageLabel.setAttribute("for","image");
 
+    const iconImg = document.createElement("i");
+    iconImg.classList.add("fa", "fa-light", "fa-image");
+    iconImg.setAttribute("id", "icon-image");
+
     const buttonPhotoAdd = document.createElement("button");
     buttonPhotoAdd.setAttribute("type", "submit");
     buttonPhotoAdd.setAttribute("value", "buttonphotoAdd");
@@ -31,6 +35,11 @@ if(token){
     imageInput.setAttribute("name", "imgPhoto");
     imageInput.setAttribute("accept", "image/*");
     imageInput.setAttribute("aria-label", "Ajouter photo");
+
+    const photoPreview = document.createElement("img");
+    photoPreview.setAttribute("id", "apercuPhoto");
+    photoPreview.setAttribute("src", "#");
+    photoPreview.setAttribute("alt", "Apercu de la photo.")
 
     const labelElement = document.createElement("label");
     labelElement.setAttribute("id", "labelElement");
@@ -99,9 +108,13 @@ if(token){
     categorieSelect.appendChild(objectCategorie);
     categorieSelect.appendChild(appartementsCategorie);
     categorieSelect.appendChild(hotelRestoCategorie);
+    labelElement.appendChild(iconImg);
     labelElement.appendChild(buttonPhotoAdd);
     labelElement.appendChild(imageInput);
+    labelElement.appendChild(photoPreview);
     imageLabel.appendChild(labelElement);
+
+    
 
     const bordure2 = document.createElement("div");
     bordure2.setAttribute("id", "bordure2");
@@ -116,20 +129,35 @@ if(token){
     bottomModal2.style.cssText = "margin-bottom: 20px;";
     imageInput.style.display = "none";
 
+    addLinkPhoto.onclick = function appearmodalPhoto(){
+        modalPhoto2.style.display = "block";
+    }
+    
+    close2.onclick = function exitmodalPhoto(){
+        modalPhoto2.style.display = "none";
+    }
+
     buttonPhotoAdd.addEventListener("click", function(){
         imageInput.click();
     
     });
+
+    imageInput.addEventListener("change", function(){
+        const file = this.files[0];
+        if (file){
+            const reader = new FileReader();
+            reader.addEventListener("load", function(){
+                photoPreview.setAttribute("src", this.result);
+                photoPreview.style.display = "block";
+                iconImg.style.display = "none";
+                buttonPhotoAdd.style.display = "none";
+            })
+            reader.readAsDataURL(file);
+        }
+    });
+
 }
 
-
-addLinkPhoto.onclick = function appearmodalPhoto(){
-    modalPhoto2.style.display = "block";
-}
-
-close2.onclick = function exitmodalPhoto(){
-    modalPhoto2.style.display = "none";
-}
 
 
 
