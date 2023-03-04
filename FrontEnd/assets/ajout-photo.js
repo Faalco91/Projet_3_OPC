@@ -36,6 +36,10 @@ if(token){
     imageInput.setAttribute("accept", "image/*");
     imageInput.setAttribute("aria-label", "Ajouter photo");
 
+    const formatImg = document.createElement("p");
+    formatImg.setAttribute("id", "formatImage");
+    formatImg.textContent = "jpg, png: 4mo max";
+
     const photoPreview = document.createElement("img");
     photoPreview.setAttribute("id", "apercuPhoto");
     photoPreview.setAttribute("src", "#");
@@ -54,7 +58,7 @@ if(token){
     titleInput.setAttribute("type", "text");
     titleInput.setAttribute("id", "titleInputPhoto");
     titleInput.setAttribute("name", "titleInputPhoto");
-    titleInput.classList.add("champ-text");
+    titleInput.classList.add("champ-text", "champ");
 
     const categorieLabel = document.createElement("label");
     categorieLabel.textContent = "Catégorie";
@@ -111,6 +115,7 @@ if(token){
     labelElement.appendChild(iconImg);
     labelElement.appendChild(buttonPhotoAdd);
     labelElement.appendChild(imageInput);
+    labelElement.appendChild(formatImg);
     labelElement.appendChild(photoPreview);
     imageLabel.appendChild(labelElement);
 
@@ -126,8 +131,9 @@ if(token){
     imageLabel.style.cssText = "display: flex; justify-content: center;";
     bordure2.style.cssText = "border-bottom: 1px solid #a7a7a7; width: 100%; margin-top: 25px;";
     submitPhoto.style.cssText = "display: flex; justify-content: center; color: white; background-color: #A7A7A7; margin: 2em auto; width: 237px; height: 36px; border: 0px; border-radius: 60px;";
-    bottomModal2.style.cssText = "margin-bottom: 20px;";
+    //bottomModal2.style.cssText = "margin-bottom: 20px;";
     imageInput.style.display = "none";
+    categorieSelect.style.cssText = "padding-left:10px;";
 
     addLinkPhoto.onclick = function appearmodalPhoto(){
         modalPhoto2.style.display = "block";
@@ -151,6 +157,7 @@ if(token){
                 photoPreview.style.display = "block";
                 iconImg.style.display = "none";
                 buttonPhotoAdd.style.display = "none";
+                formatImg.style.display = "none";
             })
             reader.readAsDataURL(file);
         }

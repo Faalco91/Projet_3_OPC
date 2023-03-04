@@ -25,6 +25,7 @@ const modalGalerie = document.getElementById("modal_galerie");
 //
 const gallery2 = document.querySelector(".gallery2");
 //
+const article = document.getElementById("description");
 /*const modal1 = document.getElementById("modal");
 const modal2 = document.getElementById("modal-photo");*/
 //const bottomModal = document.getElementById("")
@@ -56,6 +57,9 @@ function adminContent() {
         const iconModif3 = document.createElement("i");
         iconModif3.classList.add("icon-edit", "fa", "fa-regular", "fa-pen-to-square");
         iconModif3.setAttribute("id", "icon-edit-3");
+        const iconModif4 = document.createElement("i");
+        iconModif4.classList.add("icon-edit", "fa", "fa-regular", "fa-pen-to-square");
+        iconModif4.setAttribute("id", "icon-edit-4");
 
 
         const pEdit = document.createElement("p");
@@ -72,6 +76,9 @@ function adminContent() {
         const modif2 = document.createElement("a");
         modif2.classList.add("a-modif");
         modif2.textContent = "modifier";
+        const modif3 = document.createElement("a");
+        modif3.classList.add("a-modif");
+        modif3.textContent = "modifier";
 
 
         adminBar1.appendChild(adminBar2);
@@ -82,6 +89,8 @@ function adminContent() {
         modifPortrait.appendChild(modif);
         mesProjets.appendChild(projetsModif);
         projetsModif.appendChild(modifIconLiens);
+        article.appendChild(iconModif4);
+        article.appendChild(modif3);
         /*modifIconLiens.appendChild(iconModif3);
         modifIconLiens.appendChild(modif2);*/
 
