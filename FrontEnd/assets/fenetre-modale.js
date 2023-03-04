@@ -13,8 +13,10 @@ const images = document.querySelectorAll("images");
 
 
 
+
 //Fonction qui va nous permettre de générer les images dans la page avec leurs texte
 function createImage2(a) {
+    console.log(a);
 
     const token = localStorage.getItem("authToken");
 
@@ -25,9 +27,10 @@ function createImage2(a) {
             const figure = document.createElement("figure");
             figure.className = a[i].category.name;
             figure.classList.add("imgs2");
-            figure.setAttribute("id", "" + (i + 1));
+            figure.setAttribute("id", "" + (a[i].id));
             const imgArts = document.createElement("img");
             imgArts.classList.add("images");
+            var imageElement = document.createElement("img");
             const figcaption = document.createElement("figcaption");
             //Commande pour ajouter le texte sous les images
             const text = document.createTextNode("éditer");
@@ -35,6 +38,7 @@ function createImage2(a) {
             buttonSupp.classList.add("trash-button");
             const trash = document.createElement("i");
             trash.classList.add("icon-edit-4", "fa-solid", "fa-trash-can");
+
 
 
             //Commandes pour placer les éléments aux bons endroits dans le HTML

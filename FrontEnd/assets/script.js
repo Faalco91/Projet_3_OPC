@@ -1,6 +1,6 @@
 
 //Commande pour ciblé la div class="gallery".
-const gallery = document.querySelector(".gallery");
+const gallery = document.querySelector(".gallery1");
 //Const ayant ciblé la div class = "filtres".
 const filtres = document.querySelector(".filtres");
 //Variable qui permet de créer un tableau dans lequel on va par la suite affecter les images via l'API.
@@ -29,7 +29,6 @@ const article = document.getElementById("description");
 /*const modal1 = document.getElementById("modal");
 const modal2 = document.getElementById("modal-photo");*/
 //const bottomModal = document.getElementById("")
-
 
 
 login.onclick = function loginLogout() {
@@ -114,7 +113,7 @@ function adminContent() {
 function showImg(b, imagesData) {
 
     //Commande qui permet d'enlever des images avec leurs textes.
-    const imgToRemove = document.querySelectorAll('.gallery > figure');
+    const imgToRemove = document.querySelectorAll('.gallery1 > figure');
     //Ce qui va nous permettre de passer imgToRemove en tableau
     const imgToRemoveArray = Array.from(imgToRemove);
     //Code CSS qui va mettre de base un display: none sur les images, sauf c'elles qui correspondent au filtrage choisi.
@@ -185,7 +184,7 @@ function createImage(a) {
         //Commandes pour créer les élements figure>img,figcaption
         const figure = document.createElement("figure");
         figure.className = a[i].category.name;
-        figure.setAttribute("id","" + (i+1));
+        figure.setAttribute("id","" + (a[i].id));
         const imgArts = document.createElement("img");
         const figcaption = document.createElement("figcaption");
         //Commande pour ajouter le texte sous les images

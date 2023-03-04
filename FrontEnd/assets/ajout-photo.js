@@ -4,6 +4,7 @@ const principalContent = document.querySelector(".principal-content");
 const bottomModal2 = document.querySelector(".bottom-modal-2");
 const addLinkPhoto = document.getElementById("modalPhotoAddLink");
 const close2 = document.querySelector(".close2");
+const gallery_3 = document.querySelector(".gallery");
 
 
 
@@ -137,7 +138,7 @@ if(token){
 
     addLinkPhoto.onclick = function appearmodalPhoto(){
         modalPhoto2.style.display = "block";
-    }
+    } 
     
     close2.onclick = function exitmodalPhoto(){
         modalPhoto2.style.display = "none";
@@ -161,6 +162,43 @@ if(token){
             })
             reader.readAsDataURL(file);
         }
+    });
+
+    submitPhoto.addEventListener("click", function(){
+        //On récupère les données du formulaire
+        var title = document.getElementById("titleInputPhoto").value;
+        var image = document.getElementById("inputFile").files[0];
+        var category = document.getElementById("categoriePhoto").value;
+        //Création d'un objet formData pour envoyer les données
+        var formData = new FormData();
+        
+        formData.append("title", title);
+        formData.append("image", image);
+        formData.append("category", category);
+
+        const token = localStorage.getItem("authToken");
+
+        //Envoi des données à l'API
+        fetch('http://localhost:5678/api/works',{
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            //Traiter la reponse de l'API
+           /* const newImage = body.createElement('img');
+            newImage.src = data.url;
+            newImage.alt = data.title;
+            body.getElementById("gallery").appendChild(newImage);*/
+        })
+        .catch(error => {
+            //Afficher les erreurs
+            console.error(error);
+        });
     });
 
 }
