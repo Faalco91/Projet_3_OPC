@@ -4,7 +4,7 @@ const principalContent = document.querySelector(".principal-content");
 const bottomModal2 = document.querySelector(".bottom-modal-2");
 const addLinkPhoto = document.getElementById("modalPhotoAddLink");
 const close2 = document.querySelector(".close2");
-const gallery_3 = document.querySelector(".gallery");
+const gallery3 = document.querySelector(".gallery");
 
 
 
@@ -34,7 +34,8 @@ if(token){
     imageInput.setAttribute("type", "file");
     imageInput.setAttribute("id", "inputFile");
     imageInput.setAttribute("name", "imgPhoto");
-    imageInput.setAttribute("accept", "image/*");
+    imageInput.setAttribute("accept", "image/png, image/jpg");
+    imageInput.setAttribute("maxlength", "4000000");
     imageInput.setAttribute("aria-label", "Ajouter photo");
 
     const formatImg = document.createElement("p");
@@ -166,23 +167,34 @@ if(token){
 
     submitPhoto.addEventListener("click", function(){
         //On récupère les données du formulaire
-        var title = document.getElementById("titleInputPhoto").value;
-        var image = document.getElementById("inputFile").files[0];
-        var category = document.getElementById("categoriePhoto").value;
+        const title = document.getElementById("titleInputPhoto").value;
+        const image = document.getElementById("inputFile").files[0];
+        const category = document.getElementById("categoriePhoto").value;
         //Création d'un objet formData pour envoyer les données
-        var formData = new FormData();
+        const formData = new FormData();
         
         formData.append("title", title);
+        //console.log(formData);
         formData.append("image", image);
-        formData.append("category", category);
 
-        const token = localStorage.getItem("authToken");
+        formData.append("category", category);
+        //console.log({title,image,category});
+
+        /*for (var pair of formData.entries()) {
+            console.log(pair[0]+ ', ' + pair[1]);
+        }*/
+
+         // const token = localStorage.getItem("authToken");
+        //console.log(token);
+        console.log(image);
 
         //Envoi des données à l'API
-        fetch('http://localhost:5678/api/works',{
+        fetch('http://localhost:5678/api/works', {
             method: "POST",
             headers: {
+                //Accept: "application/json",
                 Authorization: `Bearer ${token}`,
+                //"Content-type": "multipart/form-data"
             },
             body: formData
         })
@@ -190,10 +202,10 @@ if(token){
         .then(data => {
             console.log(data);
             //Traiter la reponse de l'API
-           /* const newImage = body.createElement('img');
-            newImage.src = data.url;
-            newImage.alt = data.title;
-            body.getElementById("gallery").appendChild(newImage);*/
+            const newImage = document.createElement('img');
+            //newImage.src = data.url;
+            //newImage.alt = data.title;
+            gallery3.appendChild(newImage);
         })
         .catch(error => {
             //Afficher les erreurs
@@ -202,9 +214,6 @@ if(token){
     });
 
 }
-
-
-
 
 /*window.onclick = function exitatanywhere(event) {
     if (event.target == modalPhoto2) {
