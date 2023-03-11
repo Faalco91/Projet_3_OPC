@@ -177,7 +177,7 @@ if(token){
         //console.log(formData);
         formData.append("image", image);
 
-        formData.append("category", category);
+        formData.append("category", 1);
         //console.log({title,image,category});
 
         /*for (var pair of formData.entries()) {
