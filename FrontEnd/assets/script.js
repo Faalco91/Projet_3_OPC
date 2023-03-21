@@ -26,6 +26,7 @@ const modalGalerie = document.getElementById("modal_galerie");
 const gallery2 = document.querySelector(".gallery2");
 //
 const article = document.getElementById("description");
+//
 /*const modal1 = document.getElementById("modal");
 const modal2 = document.getElementById("modal-photo");*/
 //const bottomModal = document.getElementById("")
@@ -139,12 +140,13 @@ function showImg(b, imagesData) {
 
 //Fonction qui va permettre de créer les filtres du sites.
 function createFilter(name) {
+    console.log(name);
     const token = localStorage.getItem("authToken");
     // erreur rencontré "impossible de lire propriété name sur élément undefined" donc condition de mise en marche de la fonction que si name !== undefined
-    if (!token) {
+    if (name && !token) {
         const tous = document.createElement("button");
         tous.innerHTML = 'Tous';
-        tous.className = 'btn-filter';
+        tous.className = 'btn-filter active';
         tous.setAttribute("id", "tous-btn");
         tous.addEventListener("click", function () { showImg("tous", imagesData); });
 
@@ -172,8 +174,27 @@ function createFilter(name) {
         filtres.appendChild(objets);
         filtres.appendChild(appartements);
         filtres.appendChild(hotelresto);
+
+    const filterBtns = document.querySelectorAll('.btn-filter');
+    console.log("filterBtns");
+
+    filterBtns.forEach(btn => {
+    btn.addEventListener('click',() => {
+    
+    // Supprime la classe active de tous les boutons
+    filterBtns.forEach(otherBtn => otherBtn.classList.remove('active'));
+
+    // Ajoute la classe active au bouton cliqué
+    btn.classList.add('active');
+
+    // Applique le filtre correspondant
+    //applyFilter(btn.dataset.filter);
+    });
+
+});
     }
 }
+
 
 
 
