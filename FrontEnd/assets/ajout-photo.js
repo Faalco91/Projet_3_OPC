@@ -8,7 +8,7 @@ const gallery3 = document.querySelector(".gallery");
 
 
 
-/*function ajoutPhoto(){*/
+//function ajoutPhoto(objet)
 const token = localStorage.getItem("authToken");
 
 if(token){
@@ -72,19 +72,19 @@ if(token){
     categorieSelect.classList.add("champ-text");
 
     const nothingCategorie = document.createElement("option");
-    nothingCategorie.setAttribute("id", "nothingSelect");
+    nothingCategorie.setAttribute("id", "0");
     //nothingCategorie.textContent = "";
 
     const objectCategorie = document.createElement("option");
-    objectCategorie.setAttribute("id","objectSelect");
+    objectCategorie.setAttribute("id","1");
     objectCategorie.textContent = "Objets";
 
     const  appartementsCategorie = document.createElement("option");
-    appartementsCategorie.setAttribute("id", "appartementSelect");
+    appartementsCategorie.setAttribute("id", "2");
     appartementsCategorie.textContent = "Appartements";
 
     const hotelRestoCategorie = document.createElement("option");
-    hotelRestoCategorie.setAttribute("id","hotelRestoSelect");
+    hotelRestoCategorie.setAttribute("id","3");
     hotelRestoCategorie.textContent = "Hôtels & Restaurants";
 
     const submitPhoto = document.createElement("input");
@@ -169,15 +169,19 @@ if(token){
         //On récupère les données du formulaire
         const title = document.getElementById("titleInputPhoto").value;
         const image = document.getElementById("inputFile").files[0];
-        const category = document.getElementById("categoriePhoto").value;
+        const category = document.getElementById("categoriePhoto");
+        var selectedOption = category.options[category.selectedIndex];
+        var selectedOptionId = selectedOption.id;
+        console.log(selectedOptionId);
+        console.log(document.getElementById("categoriePhoto").value);
+
         //Création d'un objet formData pour envoyer les données
         const formData = new FormData();
         
         formData.append("title", title);
-        //console.log(formData);
         formData.append("image", image);
+        formData.append("category", selectedOptionId);
 
-        formData.append("category", 1);
         //console.log({title,image,category});
 
         /*for (var pair of formData.entries()) {
@@ -186,7 +190,6 @@ if(token){
 
          // const token = localStorage.getItem("authToken");
         //console.log(token);
-        console.log(image);
 
         //Envoi des données à l'API
         fetch('http://localhost:5678/api/works', {
