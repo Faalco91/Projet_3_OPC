@@ -108,7 +108,7 @@ function createImage2(a) {
 
 btn.onclick = function appearsmodal() {
     modal.style.display = "block";
-    console.log(btn);
+    //console.log(btn);
 }
 
 /*exit.onclick = function exitmodal() {

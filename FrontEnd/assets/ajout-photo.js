@@ -14,7 +14,7 @@ const token = localStorage.getItem("authToken");
 if(token){
 
     const formAdd = document.createElement("form");
-
+    formAdd.setAttribute("id", "form-photo");
 
     const imageLabel = document.createElement("label");
     //imageLabel.textContent = "+ Ajouter photo";
@@ -137,17 +137,19 @@ if(token){
     imageInput.style.display = "none";
     categorieSelect.style.cssText = "padding-left:10px;";
 
+
     addLinkPhoto.onclick = function appearmodalPhoto(){
         modalPhoto2.style.display = "block";
     } 
     
     close2.onclick = function exitmodalPhoto(){
         modalPhoto2.style.display = "none";
+        //commande pour reset le formulaire après utilisation
+        formAdd.reset();
     }
 
     buttonPhotoAdd.addEventListener("click", function(){
         imageInput.click();
-    
     });
 
     imageInput.addEventListener("change", function(){
@@ -169,6 +171,8 @@ if(token){
         //On récupère les données du formulaire
         const title = document.getElementById("titleInputPhoto").value;
         const image = document.getElementById("inputFile").files[0];
+        const imageURL = image.name;
+        console.log(imageURL);
         const category = document.getElementById("categoriePhoto");
         var selectedOption = category.options[category.selectedIndex];
         var selectedOptionId = selectedOption.id;
@@ -180,6 +184,7 @@ if(token){
         
         formData.append("title", title);
         formData.append("image", image);
+
         formData.append("category", selectedOptionId);
 
         //console.log({title,image,category});
@@ -206,8 +211,9 @@ if(token){
             console.log(data);
             //Traiter la reponse de l'API
             const newImage = document.createElement('img');
-            //newImage.src = data.url;
-            //newImage.alt = data.title;
+            //newImage.src = data.imageUrl;
+            //console.log(data.imageUrl);
+            newImage.alt = data.title;
             gallery3.appendChild(newImage);
         })
         .catch(error => {
@@ -216,7 +222,10 @@ if(token){
         });
     });
 
+
+
 }
+
 
 /*window.onclick = function exitatanywhere(event) {
     if (event.target == modalPhoto2) {
