@@ -41,8 +41,11 @@
     event.preventDefault();
     const email = document.getElementById("email").value;
     const mdp = document.getElementById("mdp").value;
-    let token;
 
+    const passwordFiled = document.getElementById("mdp");
+    const errorPassword = document.getElementById("mdp-error");
+
+    let token;
 
     const response = fetch('http://localhost:5678/api/users/login', {
         method: "POST",
@@ -58,7 +61,10 @@
         if(response.ok){
             return response.json();
         } else {
-            alert('Erreur dans l’identifiant ou le mot de passe');
+            passwordFiled.classList.add('error');
+            errorPassword.textContent = "Erreur dans l'identifiant ou le mot de passe.";
+            errorPassword.style.display = 'block';
+            throw new Error ("Erreur dans l'identifiant ou le mot de passe.");
         }
     }).then(data => {
         token = data.token;
