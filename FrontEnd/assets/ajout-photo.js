@@ -95,8 +95,6 @@ if(token){
 
 
 
-
-
     modalPhoto2.appendChild(modalSubmit);
     modalSubmit.appendChild(principalContent);
     modalSubmit.appendChild(bottomModal2);
@@ -186,15 +184,7 @@ if(token){
         formData.append("image", image);
 
         formData.append("category", selectedOptionId);
-
-        //console.log({title,image,category});
-
-        /*for (var pair of formData.entries()) {
-            console.log(pair[0]+ ', ' + pair[1]);
-        }*/
-
-         // const token = localStorage.getItem("authToken");
-        //console.log(token);
+        
 
         //Envoi des données à l'API
         fetch('http://localhost:5678/api/works', {
@@ -215,20 +205,12 @@ if(token){
             //console.log(data.imageUrl);
             newImage.alt = data.title;
             gallery3.appendChild(newImage);
+            //Permet d'afficher instantanément l'image
+            location.reload();
         })
         .catch(error => {
             //Afficher les erreurs
             console.error(error);
         });
     });
-
-
-
 }
-
-
-/*window.onclick = function exitatanywhere(event) {
-    if (event.target == modalPhoto2) {
-        modalPhoto2.style.display = "none";
-    }
-}*/

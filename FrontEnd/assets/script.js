@@ -175,23 +175,19 @@ function createFilter(name) {
         filtres.appendChild(appartements);
         filtres.appendChild(hotelresto);
 
-    const filterBtns = document.querySelectorAll('.btn-filter');
-    console.log("filterBtns");
-
-    filterBtns.forEach(btn => {
-    btn.addEventListener('click',() => {
-    
-    // Supprime la classe active de tous les boutons
-    filterBtns.forEach(otherBtn => otherBtn.classList.remove('active'));
-
-    // Ajoute la classe active au bouton cliqué
-    btn.classList.add('active');
-
-    // Applique le filtre correspondant
-    //applyFilter(btn.dataset.filter);
-    });
-
-});
+        const filterBtns = document.querySelectorAll('.btn-filter');
+        console.log("filterBtns");
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click',() => {
+            
+            // Supprime la classe active de tous les boutons
+            filterBtns.forEach(otherBtn => otherBtn.classList.remove('active'));
+            
+            // Ajoute la classe active au bouton cliqué
+            btn.classList.add('active');
+            });
+        });
     }
 }
 
