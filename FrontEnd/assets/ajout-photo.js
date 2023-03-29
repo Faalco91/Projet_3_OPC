@@ -73,18 +73,19 @@ function ajoutPhoto(categorie){
    const nothingCategorie = document.createElement("option");
    nothingCategorie.setAttribute("id", "0");
    //nothingCategorie.textContent = "";
+   categorieSelect.appendChild(nothingCategorie);
 
-   const objectCategorie = document.createElement("option");
-   objectCategorie.setAttribute("id",categorie[0].id);
-   objectCategorie.textContent = "Objets";
 
-   const  appartementsCategorie = document.createElement("option");
-   appartementsCategorie.setAttribute("id", categorie[1].id);
-   appartementsCategorie.textContent = "Appartements";
 
-   const hotelRestoCategorie = document.createElement("option");
-   hotelRestoCategorie.setAttribute("id",categorie[2].id);
-   hotelRestoCategorie.textContent = "Hôtels & Restaurants";
+   for (let i = 0; i < categorie.length; i++){
+
+        const categorieOption = document.createElement("option");
+        categorieOption.setAttribute("id", categorie[i].id);
+        categorieOption.textContent = categorie[i].name;
+        categorieSelect.appendChild(categorieOption);
+
+   }
+
 
    const submitPhoto = document.createElement("input");
    submitPhoto.setAttribute("type", "submit");
@@ -105,10 +106,10 @@ function ajoutPhoto(categorie){
    formAdd.appendChild(categorieLabel);
    formAdd.appendChild(categorieSelect);
    bottomModal2.appendChild(submitPhoto);
-   categorieSelect.appendChild(nothingCategorie);
-   categorieSelect.appendChild(objectCategorie);
-   categorieSelect.appendChild(appartementsCategorie);
-   categorieSelect.appendChild(hotelRestoCategorie);
+   //categorieSelect.appendChild(nothingCategorie);
+   //categorieSelect.appendChild(objectCategorie);
+   //categorieSelect.appendChild(appartementsCategorie);
+   //categorieSelect.appendChild(hotelRestoCategorie);
    labelElement.appendChild(iconImg);
    labelElement.appendChild(buttonPhotoAdd);
    labelElement.appendChild(imageInput);
