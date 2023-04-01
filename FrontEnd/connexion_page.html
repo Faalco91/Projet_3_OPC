@@ -28,7 +28,6 @@
 		<h2>Log In</h2>
         <form methode="POST" id="login-form" onsubmit="userConnection(event);">
             <div class="form-login"> 
-
                 <label for ="email" class="label"> E-mail </label>
                 <input type="texte" class="champ-texte email champ" id="email" name="email"/>
                 <br/>
@@ -36,7 +35,9 @@
                 <input type="password" class="champ-texte passeword champ" id="mdp" name="mdp">
 				<span id="mdp-error" style = "display: none; color: red;"></span>
                 <input type="submit" value="Se connecter" id="submit" name="submit">
+				<div id="errorMessage3" class="errorMessages"></div>
                 <a id="mdp-oublie" href="">Mot de passe oublié</a>
+
             </div>
         </form>
 	</section>

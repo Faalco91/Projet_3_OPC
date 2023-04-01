@@ -213,6 +213,14 @@ function ajoutPhoto(categorie){
 }
 ///Commande pour appeler l'API/categories
 fetch('http://localhost:5678/api/categories')
-    .then(res => res.json())
+    .then(res => {
+    if(res.ok){
+      return  res.json()
+    } else {
+       /* passwordFiled.classList.add('error');
+        errorPassword.textContent = "Erreur dans l'identifiant ou le mot de passe.";
+        errorPassword.style.display = 'block';
+        throw new Error ("Erreur dans l'identifiant ou le mot de passe.");*/
+    }
     //La variable filter va parcourir la fonction createFilter et permettre d'y afficher le .name de chaque catégories d'images à partir de l'API
-    .then(cate => ajoutPhoto(cate))
+}).then(cate => ajoutPhoto(cate))

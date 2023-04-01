@@ -75,6 +75,9 @@
         }
          window.location.href="index.html";
 
+    }).catch(error => {
+        const errorMessage3 = document.getElementById("errorMessage3");
+        errorMessage3.textContent = 'Coder erreur: ' + error.message;
     })
 } 
 

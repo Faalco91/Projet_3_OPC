@@ -27,6 +27,7 @@ const gallery2 = document.querySelector(".gallery2");
 //
 const article = document.getElementById("description");
 //
+const errorMessage1 = document.getElementById("errorMessage1");
 /*const modal1 = document.getElementById("modal");
 const modal2 = document.getElementById("modal-photo");*/
 //const bottomModal = document.getElementById("")
@@ -242,6 +243,11 @@ fetch('http://localhost:5678/api/works')
         return el;
     })
     .then(data => createImage(data))
+    .catch( err =>{
+        const errorMessage1= document.getElementById("errorMessage1");
+        errorMessage1.innerHTML = "Code erreur: " + err.message;
+    })
+
 
 
 ///Commande pour appeler l'API/categories
@@ -249,9 +255,10 @@ fetch('http://localhost:5678/api/categories')
     .then(res => res.json())
     //La variable filter va parcourir la fonction createFilter et permettre d'y afficher le .name de chaque catégories d'images à partir de l'API
     .then(filter => createFilter(filter))
+    
+
 
 
 /*fetch('http://localhost:5678/api/users/login')
         .then(res => res.json())
         .then()*/
-

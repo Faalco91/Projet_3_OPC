@@ -10,6 +10,7 @@ const modal = document.getElementById("modal");
 const exit = document.getElementsByClassName("close")[0];
 modal.focus();
 const images = document.querySelectorAll("images");
+const errorMessageModal = document.getElementById("modalError");
 
 
 
@@ -131,3 +132,4 @@ fetch('http://localhost:5678/api/works')
         return el;
     })
     .then(data => createImage2(data))
+    .catch()

@@ -570,3 +570,9 @@ width: auto;
 }
 
 
+
+.errorMessages {
+	display: flex;
+	justify-content: center;
+	color: red;
+}
