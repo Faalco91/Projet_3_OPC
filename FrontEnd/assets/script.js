@@ -218,6 +218,8 @@ function createImage(a) {
   return true;
 }
 
+
+
 //Commande pour appeler l'API/works
 fetch('http://localhost:5678/api/works')
     .then(res => res.json())
@@ -232,6 +234,7 @@ fetch('http://localhost:5678/api/works')
         const errorMessage1= document.getElementById("errorMessage1");
         errorMessage1.innerHTML = "Code erreur: " + err.message;
     })
+
 
 
 ///Commande pour appeler l'API/categories
