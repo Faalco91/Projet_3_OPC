@@ -95,26 +95,10 @@ function createImage2(a) {
     }
 }
 
-/*for(let i = 0; i < images.length; i++){
-    const images = document.querySelectorAll("imgs2");
-    var buttonSupp = document.createElement("button")
-    buttonSupp.textContent = "Supprimer";
-    buttonSupp.addEventListener("click", function() {
-        var imgasupp = this.previousElementSibling;
-        modal.removeChild(imgasupp);
-    });
-    images[i].parentElement.appendChild(buttonSupp);
-}*/
-
-
 btn.onclick = function appearsmodal() {
     modal.style.display = "block";
     //console.log(btn);
 }
-
-/*exit.onclick = function exitmodal() {
-    modal.style.display = "none";
-}*/
 
 window.onclick = function exitatanywhere(event) {
     if (event.target == modal) {

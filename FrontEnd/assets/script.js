@@ -194,7 +194,6 @@ function createFilter(name) {
 
 
 
-
 //Fonction qui va nous permettre de générer les images dans la page avec leurs texte
 function createImage(a) {
 
@@ -219,20 +218,6 @@ function createImage(a) {
   return true;
 }
 
-
-/*window.onclick = function exitwindow(event) {
-    var modal1 = document.getElementById('modal1');
-    var modal2 = document.getElementById('modal2');
-    if (event.target == modal1) {
-      modal1.style.display = "none";
-    } else if (event.target == modal2) {
-      modal2.style.display = "none";
-    } else {
-      modal1.style.display = "none";
-      modal2.style.display = "none";
-    }
-  }*/
-
 //Commande pour appeler l'API/works
 fetch('http://localhost:5678/api/works')
     .then(res => res.json())
@@ -249,16 +234,8 @@ fetch('http://localhost:5678/api/works')
     })
 
 
-
 ///Commande pour appeler l'API/categories
 fetch('http://localhost:5678/api/categories')
     .then(res => res.json())
     //La variable filter va parcourir la fonction createFilter et permettre d'y afficher le .name de chaque catégories d'images à partir de l'API
     .then(filter => createFilter(filter))
-    
-
-
-
-/*fetch('http://localhost:5678/api/users/login')
-        .then(res => res.json())
-        .then()*/
