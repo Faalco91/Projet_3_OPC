@@ -33,6 +33,7 @@ const modal2 = document.getElementById("modal-photo");*/
 //const bottomModal = document.getElementById("")
 
 
+
 login.onclick = function loginLogout() {
     const token = localStorage.getItem("authToken");
     if (token) {
@@ -41,6 +42,8 @@ login.onclick = function loginLogout() {
     window.location.href = "connexion_page.html";
 
 }
+
+
 
 function adminContent() {
     const token = localStorage.getItem("authToken");

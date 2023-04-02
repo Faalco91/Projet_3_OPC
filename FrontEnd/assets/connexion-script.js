@@ -23,9 +23,6 @@
         if(response.ok){
             return response.json();
         } else {
-            passwordFiled.classList.add('error');
-            errorPassword.textContent = "Erreur dans l'identifiant ou le mot de passe.";
-            errorPassword.style.display = 'block';
             throw new Error ("Erreur dans l'identifiant ou le mot de passe.");
         }
     }).then(data => {
@@ -38,7 +35,14 @@
          window.location.href="index.html";
 
     }).catch(error => {
-        const errorMessage3 = document.getElementById("errorMessage3");
-        errorMessage3.textContent = 'Coder erreur: ' + error.message;
+        passwordFiled.classList.add('error');
+        errorPassword.style.display = 'block';
+
+        if(error.message == "Erreur dans l'identifiant ou le mot de passe."){
+            errorPassword.textContent = error.message;
+        } else {
+        errorPassword.textContent = 'Réessayez ulterieurement.';
+        }
+        
     })
 }
